@@ -1,0 +1,39 @@
+/*
+Theme Name: TP1 Yanis Oulmane
+Theme URI: https://wordpress.org/themes/twentytwenty/
+Author: Yanis Oulmane
+Author URI: https://github.com/YanOul1991
+Description: Thème développé dans le cadre du cours 4w4
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1.3
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tp1-yo
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/* ==================================================================== */
+/* ============= FICHIER PRINCIPALE DE LA STRUCTURE SASS =============  */
+/* ==================================================================== */
+
+/* ---------------- Variables ---------------- */
+@import "variables/couleurs";
+
+/* ------------- Balises de base ------------- */
+@import "base/simple";
+// @import "base/liens";
+
+/* --------------- Composants --------------- */
+@import "composants/menu";
+@import "composants/recherche";
+
+/* ----------------- Layout ----------------- */
+@import "layout/general";
+@import "layout/entete";
+@import "layout/galerie";
+@import "layout/hero";
