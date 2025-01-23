@@ -2,3 +2,21 @@
     background-image: url("images/maldives.jpg");
     min-height: 100vh;
 }
+
+.hero__titre{
+    width: 100%;
+    white-space: nowrap;
+    text-shadow: 2px 2px 5px green;
+}
+
+.hero__description{
+    width: 70%;
+    font-weight: bold;
+}
+
+.hero__courriel{
+    a{
+        color: black;
+        text-decoration: none;
+    }
+}
