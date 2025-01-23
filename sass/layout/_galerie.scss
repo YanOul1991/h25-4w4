@@ -1,0 +1,17 @@
+.galerie{
+    max-width: 100vw;
+    padding: 0 15vh;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    padding: 0;
+    gap: 0;
+}
+
+.galerie__figure{
+    background: blue;
+    width: 200px;
+    height: 200px;
+}
