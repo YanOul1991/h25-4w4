@@ -78,6 +78,38 @@ p {
   justify-content: space-between;
 }
 
+.entete__logo {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+
+.entete__navigation {
+  min-width: 60%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu__ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40vw;
+}
+
+.menu__li {
+  list-style: none;
+}
+.menu__li a {
+  color: gray;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 .hero {
   background-image: url("images/maldives.jpg");
   min-height: 100vh;
