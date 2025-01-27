@@ -6,4 +6,4 @@
 
 La réalisarion de ce prototype représente une permière étape pour la conception d'un thème Wordpress.
 
-# Lien page : https://yanoul1991.github.io/h25-4w4/
+Lien page : https://yanoul1991.github.io/h25-4w4/
