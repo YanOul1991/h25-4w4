@@ -1,0 +1,28 @@
+.recherche{
+    display: flex;
+    width: 12rem;
+    height: 1.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    
+    &__input{
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.01);
+        flex: 1;
+        padding: 3px;
+
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.09);
+        }
+
+        &::placeholder{
+            color: rgba(0, 0, 0, 0.13);
+            font-style: italic;
+        }
+    }
+
+    &__img{
+        flex: 0 0 20px;
+        padding: 3px;
+    }
+}
