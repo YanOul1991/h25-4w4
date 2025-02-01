@@ -1,17 +1,19 @@
-.galerie{
-    max-width: 100vw;
-    padding: 0 15vh;
+// .galerie{
+//     display: none;
 
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+//     max-width: 100vw;
+//     padding: 0 15vh;
 
-    padding: 0;
-    gap: 0;
-}
+//     display: grid;
+//     grid-template-columns: repeat(5, 1fr);
+//     grid-template-rows: repeat(2, 1fr);
 
-.galerie__figure{
-    background: blue;
-    width: 200px;
-    height: 200px;
-}
+//     padding: 0;
+//     gap: 0;
+// }
+
+// .galerie__figure{
+//     background: blue;
+//     width: 200px;
+//     height: 200px;
+// }
