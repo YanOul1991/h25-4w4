@@ -1,45 +1,33 @@
+header {
+    position: sticky;
+    top: 0;
+}
+
 .entete{
+    position: relative;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    background-color: white;
+
+    &__input {
+        display: none;
+    }
+
+    &__input:checked ~ &__navigation {
+        display: block;
+    } 
+
     &__navigation{
-        display: flex;
+        // display: none;
+        position: absolute;
         flex-direction: column;
         align-items: center;
+        top: 100%;
+        width: 100%;
+        background-color: white;
     }
+
 }
-
-// .entete__logo{
-//     height: 100px;
-//     width: 100px;
-//     background-color: red;
-// }
-
-// .entete__navigation {
-//     min-width: 60%;
-//     display: flex;
-//     flex-flow: row nowrap;
-//     justify-content: space-evenly;
-//     align-items: center;
-// }
-
-
-// .menu__ul{
-//     display: flex;
-//     flex-flow: row nowrap;
-//     justify-content: space-evenly;
-//     align-items: center;
-//     width: 40vw
-// }
-
-// .menu__li{
-//     list-style: none;
-
-//     a{
-//         color: gray;
-//         text-decoration: none;
-//         text-transform: uppercase;
-//         font-weight: 500;
-//     }
-// }
