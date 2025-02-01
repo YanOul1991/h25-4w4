@@ -1,19 +1,26 @@
 
-/* ----------------------- .menu */
+/* ------------- Menu ------------- */
 
-// ul
 .menu{ 
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  align-items: center;
   list-style-type: none;
-  gap: 10px 0;
+
+  gap: 25px 0;
+  padding: 10px 0;
 
   &__li{
-    // margin: 3px 0;
+    font-size: 1rem;
 
-    a{
+    a {
+      color: $couleur__menu;
+      text-transform: uppercase;
       text-decoration: none;
-      padding: 4px;
+
+      &:visited{
+        color: $couleur__menu--visited;
+      }
     }
   }
 }

@@ -55,16 +55,25 @@ p {
 }
 
 /* --------------- Composants --------------- */
-/* ----------------------- .menu */
+/* ------------- Menu ------------- */
 .menu {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  align-items: center;
   list-style-type: none;
-  gap: 10px 0;
+  gap: 25px 0;
+  padding: 10px 0;
+}
+.menu__li {
+  font-size: 1rem;
 }
 .menu__li a {
+  color: rgb(75, 75, 75);
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 4px;
+}
+.menu__li a:visited {
+  color: rgb(75, 75, 75);
 }
 
 .recherche {
@@ -118,6 +127,7 @@ header {
   display: block;
 }
 .entete__navigation {
+  display: none;
   position: absolute;
   flex-direction: column;
   align-items: center;
@@ -134,9 +144,45 @@ header {
 }
 .hero__titre {
   text-shadow: 2px 2px 5px rgb(0, 128, 90);
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 .hero__description {
   font-size: 1rem;
   font-weight: bold;
+}
+.hero__courriel {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.hero__courriel a {
+  text-decoration: none;
+}
+.hero__courriel a:visited {
+  color: black;
+}
+.hero__adresse {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.hero__telephone {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.hero__inscription {
+  background-color: rgba(255, 255, 255, 0.35);
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+}
+.hero__inscription a {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.hero__inscription a:visited {
+  color: black;
+}
+.hero__icone {
+  margin-top: 25px;
 }/*# sourceMappingURL=style.css.map */
