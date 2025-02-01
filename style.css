@@ -55,16 +55,25 @@ p {
 }
 
 /* --------------- Composants --------------- */
-/* ----------------------- .menu */
+/* ------------- Menu ------------- */
 .menu {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  align-items: center;
   list-style-type: none;
-  gap: 10px 0;
+  gap: 25px 0;
+  padding: 10px 0;
+}
+.menu__li {
+  font-size: 1rem;
 }
 .menu__li a {
+  color: rgb(75, 75, 75);
+  text-transform: uppercase;
   text-decoration: none;
-  padding: 4px;
+}
+.menu__li a:visited {
+  color: rgb(75, 75, 75);
 }
 
 .recherche {
@@ -118,6 +127,7 @@ header {
   display: block;
 }
 .entete__navigation {
+  display: none;
   position: absolute;
   flex-direction: column;
   align-items: center;
