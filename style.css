@@ -175,7 +175,6 @@ header {
 .hero {
   background-image: url("images/maldives.jpg");
   min-height: 100vh;
-  width: 100;
 }
 .hero__titre {
   text-shadow: 2px 2px 5px rgb(0, 128, 90);
@@ -220,4 +219,12 @@ header {
 }
 .hero__icone {
   margin-top: 25px;
+}
+@media screen and (min-width: 700px) {
+  .hero__titre {
+    font-size: 4rem;
+  }
+  .hero__description {
+    max-width: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */
