@@ -23,11 +23,25 @@ header {
     &__navigation{
         display: none;
         position: absolute;
-        flex-direction: column;
-        align-items: center;
         top: 100%;
         width: 100%;
         background-color: white;
+    }
+
+    @media screen and (min-width:  $dimension__ecran--desktop){
+        &__label {
+            display: none;
+        }
+
+        &__navigation {
+            position: static;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 1;
+        }
     }
 
 }

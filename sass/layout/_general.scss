@@ -1,9 +1,10 @@
 .global{
     max-width: 100vw;
     padding: 10vh 10vw;
+    
+    @media screen and (min-width: $dimension__ecran--desktop) {
+            max-width: 100vw;
+            padding: 10vh 5vw;
+    }
 }
 
-// .global{
-//     max-width: 100vw;
-//     padding: 10vh 5vw;
-// }

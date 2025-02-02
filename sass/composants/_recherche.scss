@@ -25,4 +25,13 @@
         flex: 0 0 20px;
         padding: 3px;
     }
+
+    @media screen and (min-width:  $dimension__ecran--desktop) {
+        display: flex;
+        flex: 0 1 auto;
+
+        &__img {
+            translate: -100% 0;
+        }
+    }
 }
