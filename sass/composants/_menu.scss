@@ -22,6 +22,17 @@
         color: $couleur__menu--visited;
       }
     }
+
+  }
+
+  @media screen and (min-width: $dimension__ecran--desktop) {
+    
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    flex: 1 0 auto;
+
+    gap: 0 25px;
+    margin: 0 25px;
   }
 }
   
