@@ -1,6 +1,7 @@
 /* ------------------- Hero ------------------- */
 
 .hero {
+    position: relative;
     background-image: url("images/maldives.jpg");
     min-height: 100vh;
 
@@ -53,6 +54,14 @@
                 color: black;
             }
         }
+    }
+
+    &__formulaire {
+        position: absolute;
+        width: 70vw;
+        left: 50%;
+        translate: -50% 50%;
+        bottom: 0;
     }
 
     &__icone {
