@@ -60,8 +60,8 @@
         position: absolute;
         width: 70vw;
         left: 50%;
-        translate: -50% 50%;
-        bottom: 0;
+        translate: -50% 0;
+        bottom: -50px;
     }
 
     &__icone {
@@ -76,6 +76,10 @@
 
         &__description {
             max-width: 40%;
+        }
+
+        &__formulaire {
+            translate: -50% 50%;
         }
     }
 }

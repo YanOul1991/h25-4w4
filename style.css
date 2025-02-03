@@ -122,10 +122,11 @@ p {
 /* ---------- Formulaire inscription ---------- */
 .formulaire {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
+  flex-flow: column nowrap;
+  justify-content: center;
   margin: 0;
-  padding: 15px 0;
+  padding: 15px 10px;
+  gap: 25px 0;
   background: white;
   box-shadow: 0px 0px 5px gray;
 }
@@ -134,10 +135,9 @@ p {
   flex-flow: column nowrap;
   justify-content: flex-end;
   list-style: none;
-  width: 18%;
 }
 .formulaire__li input {
-  border: 1px solid cyan;
+  border: 2px solid cyan;
   background: none;
   width: 100%;
   height: 2rem;
@@ -147,6 +147,27 @@ p {
 }
 .formulaire__li input[type=submit] {
   text-transform: uppercase;
+}
+@media screen and (min-width: 700px) {
+  .formulaire {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+  .formulaire__li {
+    width: 10vw;
+  }
+  .formulaire__li input {
+    border: 1px solid cyan;
+    background: none;
+    width: 100%;
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+    text-indent: 0.75rem;
+  }
+  .formulaire__li input[type=submit] {
+    text-transform: uppercase;
+  }
 }
 
 /* ----------------- Layout ----------------- */
@@ -203,26 +224,49 @@ header {
 }
 
 /* Galries img destinations */
-.galerie__titre {
-  font-size: 1.5rem;
+.galerie {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
-.galerie__conteneur {
-  display: grid;
-  gap: 10px 10px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  width: 100%;
+.galerie__titre {
+  font-size: 1.25rem;
 }
 .galerie__figure {
-  width: 1fr;
+  width: 80vw;
   height: fit-content;
-  background: green;
   padding: 0;
-  margin: 0;
+  margin: 10px auto;
 }
 .galerie__figure img {
   display: block;
   width: 100%;
+}
+@media screen and (min-width: 700px) {
+  .galerie {
+    align-items: flex-start;
+  }
+  .galerie__titre {
+    font-size: 1.5rem;
+  }
+  .galerie__conteneur {
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+  }
+  .galerie__figure {
+    width: 1fr;
+    height: fit-content;
+    background: green;
+    padding: 0;
+    margin: 0;
+  }
+  .galerie__figure img {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* ------------------- Hero ------------------- */
@@ -276,8 +320,8 @@ header {
   position: absolute;
   width: 70vw;
   left: 50%;
-  translate: -50% 50%;
-  bottom: 0;
+  translate: -50% 0;
+  bottom: -50px;
 }
 .hero__icone {
   margin-top: 25px;
@@ -288,5 +332,8 @@ header {
   }
   .hero__description {
     max-width: 40%;
+  }
+  .hero__formulaire {
+    translate: -50% 50%;
   }
 }/*# sourceMappingURL=style.css.map */
