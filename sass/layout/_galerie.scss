@@ -3,31 +3,57 @@
 
 .galerie {
 
-    &__titre{
-        font-size: 1.5rem;
-    }
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 
-    &__conteneur {
-        display: grid;
-        gap: 10px 10px;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        width: 100%;
+    &__titre {
+        font-size: 1.25rem;
     }
 
     &__figure {
-        width: 1fr;
+        width: 80vw;
         height: fit-content;
-        background: green;
-
+        
         padding: 0;
-        margin: 0;
+        margin: 10px auto;
 
         img {
             display: block;
-            // display: none;
             width: 100%;
         }
     }
+    
 
+    @media screen and (min-width: $dimension__ecran--desktop) {
+        align-items: flex-start;
+
+        &__titre{
+            font-size: 1.5rem;
+        }
+    
+        &__conteneur {
+            display: grid;
+            gap: 10px 10px;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            width: 100%;
+        }
+    
+        &__figure {
+            width: 1fr;
+            height: fit-content;
+            background: green;
+    
+            padding: 0;
+            margin: 0;
+    
+            img {
+                display: block;
+                // display: none;
+                width: 100%;
+            }
+        }
+        
+    }
 }

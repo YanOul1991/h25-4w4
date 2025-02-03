@@ -203,26 +203,49 @@ header {
 }
 
 /* Galries img destinations */
-.galerie__titre {
-  font-size: 1.5rem;
+.galerie {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
-.galerie__conteneur {
-  display: grid;
-  gap: 10px 10px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  width: 100%;
+.galerie__titre {
+  font-size: 1.25rem;
 }
 .galerie__figure {
-  width: 1fr;
+  width: 80vw;
   height: fit-content;
-  background: green;
   padding: 0;
-  margin: 0;
+  margin: 10px auto;
 }
 .galerie__figure img {
   display: block;
   width: 100%;
+}
+@media screen and (min-width: 700px) {
+  .galerie {
+    align-items: flex-start;
+  }
+  .galerie__titre {
+    font-size: 1.5rem;
+  }
+  .galerie__conteneur {
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+  }
+  .galerie__figure {
+    width: 1fr;
+    height: fit-content;
+    background: green;
+    padding: 0;
+    margin: 0;
+  }
+  .galerie__figure img {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* ------------------- Hero ------------------- */
