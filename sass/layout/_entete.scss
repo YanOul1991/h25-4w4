@@ -1,5 +1,6 @@
 header {
     position: sticky;
+    z-index: 1000;
     top: 0;
 }
 
@@ -41,7 +42,7 @@ header {
             justify-content: flex-end;
             align-items: center;
             flex: 1;
-        }
+        } 
     }
 
 }

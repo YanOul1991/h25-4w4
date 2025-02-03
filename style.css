@@ -119,6 +119,36 @@ p {
   }
 }
 
+/* ---------- Formulaire inscription ---------- */
+.formulaire {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 15px 0;
+  background: white;
+  box-shadow: 0px 0px 5px gray;
+}
+.formulaire__li {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  list-style: none;
+  width: 18%;
+}
+.formulaire__li input {
+  border: 1px solid cyan;
+  background: none;
+  width: 100%;
+  height: 2rem;
+  padding: 0;
+  margin: 0;
+  text-indent: 0.75rem;
+}
+.formulaire__li input[type=submit] {
+  text-transform: uppercase;
+}
+
 /* ----------------- Layout ----------------- */
 .global {
   max-width: 100vw;
@@ -127,12 +157,13 @@ p {
 @media screen and (min-width: 700px) {
   .global {
     max-width: 100vw;
-    padding: 10vh 5vw;
+    padding: 10vh 3vw;
   }
 }
 
 header {
   position: sticky;
+  z-index: 1000;
   top: 0;
 }
 
@@ -171,8 +202,32 @@ header {
   }
 }
 
+/* Galries img destinations */
+.galerie__titre {
+  font-size: 1.5rem;
+}
+.galerie__conteneur {
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+}
+.galerie__figure {
+  width: 1fr;
+  height: fit-content;
+  background: green;
+  padding: 0;
+  margin: 0;
+}
+.galerie__figure img {
+  display: block;
+  width: 100%;
+}
+
 /* ------------------- Hero ------------------- */
 .hero {
+  position: relative;
   background-image: url("images/maldives.jpg");
   min-height: 100vh;
 }
@@ -216,6 +271,13 @@ header {
 }
 .hero__inscription a:visited {
   color: black;
+}
+.hero__formulaire {
+  position: absolute;
+  width: 70vw;
+  left: 50%;
+  translate: -50% 50%;
+  bottom: 0;
 }
 .hero__icone {
   margin-top: 25px;
