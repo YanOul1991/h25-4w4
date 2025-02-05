@@ -250,16 +250,15 @@ header {
     font-size: 1.5rem;
   }
   .galerie__conteneur {
+    width: 100%;
     display: grid;
     gap: 10px 10px;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    width: 100%;
   }
   .galerie__figure {
-    width: 1fr;
+    width: 100%;
     height: fit-content;
-    background: green;
     padding: 0;
     margin: 0;
   }
@@ -289,6 +288,7 @@ header {
 }
 .hero__courriel a {
   text-decoration: none;
+  color: black;
 }
 .hero__courriel a:visited {
   color: black;
@@ -308,6 +308,7 @@ header {
   border-radius: 5px;
 }
 .hero__inscription a {
+  color: black;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
