@@ -1,0 +1,87 @@
+/* ------------------- Hero ------------------- */
+
+.hero {
+    position: relative;
+    background-image: url("images/maldives.jpg");
+    min-height: 100vh;
+
+    &__titre {
+        text-shadow: 2px 2px 5px rgb(0, 128, 90);
+        font-size: 1.75rem;
+    }
+
+    &__description {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    &__courriel {
+        font-size: 1rem;
+        font-weight: bold;
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &:visited {
+                color: black;
+            }
+        }
+    }
+
+    &__adresse {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    &__telephone {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    &__inscription {
+        background-color: rgba(255, 255, 255, 0.35);
+        width: fit-content;
+        padding: 0.75rem 1rem;
+        border-radius: 5px;
+        
+        a {
+            color: black;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            &:visited {
+                color: black;
+            }
+        }
+    }
+
+    &__formulaire {
+        position: absolute;
+        width: 70vw;
+        left: 50%;
+        translate: -50% 0;
+        bottom: -50px;
+    }
+
+    &__icone {
+        margin-top: 25px;
+    }
+
+    @media screen and (min-width: $dimension__ecran--desktop) {
+
+        &__titre {
+            font-size: 4rem;
+        }
+
+        &__description {
+            max-width: 40%;
+        }
+
+        &__formulaire {
+            translate: -50% 50%;
+        }
+    }
+}

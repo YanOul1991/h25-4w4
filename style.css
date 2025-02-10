@@ -1,0 +1,356 @@
+@charset "UTF-8";
+/*
+Theme Name: TP1 Yanis Oulmane
+Theme URI: https://wordpress.org/themes/twentytwenty/
+Author: Yanis Oulmane
+Author URI: https://github.com/YanOul1991
+Description: Thème développé dans le cadre du cours 4w4
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1.3
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: tp1-yo
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/* ==================================================================== */
+/* ============= FICHIER PRINCIPALE DE LA STRUCTURE SASS =============  */
+/* ==================================================================== */
+/* ---------------- Variables ---------------- */
+/* ------------- Balises de base ------------- */
+body {
+  font-size: 16px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2.3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+}
+
+h6 {
+  font-size: clamp(0.8rem, 1.7vw, 1.2rem);
+}
+
+p {
+  font-size: clamp(0.8rem, 1.7vw, 1rem);
+}
+
+/* --------------- Composants --------------- */
+/* ------------- Menu ------------- */
+.menu {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  list-style-type: none;
+  gap: 25px 0;
+  padding: 10px 0;
+}
+.menu__li {
+  font-size: 1rem;
+}
+.menu__li a {
+  color: rgb(75, 75, 75);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.menu__li a:visited {
+  color: rgb(75, 75, 75);
+}
+@media screen and (min-width: 700px) {
+  .menu {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    flex: 1 0 auto;
+    gap: 0 25px;
+    margin: 0 25px;
+  }
+}
+
+.recherche {
+  display: none;
+  width: 12rem;
+  height: 1.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+}
+.recherche__input {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.01);
+  flex: 1;
+  padding: 3px;
+}
+.recherche__input:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+.recherche__input::placeholder {
+  color: rgba(0, 0, 0, 0.13);
+  font-style: italic;
+}
+.recherche__img {
+  flex: 0 0 20px;
+  padding: 3px;
+}
+@media screen and (min-width: 700px) {
+  .recherche {
+    display: flex;
+    flex: 0 1 auto;
+  }
+  .recherche__img {
+    translate: -100% 0;
+  }
+}
+
+/* ---------- Formulaire inscription ---------- */
+.formulaire {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin: 0;
+  padding: 15px 10px;
+  gap: 25px 0;
+  background: white;
+  box-shadow: 0px 0px 5px gray;
+}
+.formulaire__li {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  list-style: none;
+}
+.formulaire__li input {
+  border: 2px solid cyan;
+  background: none;
+  width: 100%;
+  height: 2rem;
+  padding: 0;
+  margin: 0;
+  text-indent: 0.75rem;
+}
+.formulaire__li input[type=submit] {
+  text-transform: uppercase;
+}
+@media screen and (min-width: 700px) {
+  .formulaire {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+  .formulaire__li {
+    width: 10vw;
+  }
+  .formulaire__li input {
+    border: 1px solid cyan;
+    background: none;
+    width: 100%;
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+    text-indent: 0.75rem;
+  }
+  .formulaire__li input[type=submit] {
+    text-transform: uppercase;
+  }
+}
+
+/* ----------------- CARTE ----------------- */
+.carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carte--grande {
+  flex: 1 1 250px;
+}
+.carte__image img {
+  width: 100%;
+}
+.carte__contenu {
+  background-color: aliceblue;
+}
+
+/* ----------------- Layout ----------------- */
+.global {
+  max-width: 100vw;
+  padding: 10vh 10vw;
+}
+@media screen and (min-width: 700px) {
+  .global {
+    max-width: 100vw;
+    padding: 10vh 3vw;
+  }
+}
+
+header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+
+.entete {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.entete__input {
+  display: none;
+}
+.entete__input:checked ~ .entete__navigation {
+  display: block;
+}
+.entete__navigation {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: white;
+}
+@media screen and (min-width: 700px) {
+  .entete__label {
+    display: none;
+  }
+  .entete__navigation {
+    position: static;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+  }
+}
+
+/* Galries img destinations */
+.galerie {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.galerie__titre {
+  font-size: 1.25rem;
+}
+.galerie__figure {
+  width: 80vw;
+  height: fit-content;
+  padding: 0;
+  margin: 10px auto;
+}
+.galerie__figure img {
+  display: block;
+  width: 100%;
+}
+@media screen and (min-width: 700px) {
+  .galerie {
+    align-items: flex-start;
+  }
+  .galerie__titre {
+    font-size: 1.5rem;
+  }
+  .galerie__conteneur {
+    width: 100%;
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .galerie__figure {
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+  .galerie__figure img {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* ------------------- Hero ------------------- */
+.hero {
+  position: relative;
+  background-image: url("images/maldives.jpg");
+  min-height: 100vh;
+}
+.hero__titre {
+  text-shadow: 2px 2px 5px rgb(0, 128, 90);
+  font-size: 1.75rem;
+}
+.hero__description {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.hero__courriel {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.hero__courriel a {
+  text-decoration: none;
+  color: black;
+}
+.hero__courriel a:visited {
+  color: black;
+}
+.hero__adresse {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.hero__telephone {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.hero__inscription {
+  background-color: rgba(255, 255, 255, 0.35);
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+}
+.hero__inscription a {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.hero__inscription a:visited {
+  color: black;
+}
+.hero__formulaire {
+  position: absolute;
+  width: 70vw;
+  left: 50%;
+  translate: -50% 0;
+  bottom: -50px;
+}
+.hero__icone {
+  margin-top: 25px;
+}
+@media screen and (min-width: 700px) {
+  .hero__titre {
+    font-size: 4rem;
+  }
+  .hero__description {
+    max-width: 40%;
+  }
+  .hero__formulaire {
+    translate: -50% 50%;
+  }
+}/*# sourceMappingURL=style.css.map */

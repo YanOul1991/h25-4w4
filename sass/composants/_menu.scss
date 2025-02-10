@@ -1,0 +1,38 @@
+
+/* ------------- Menu ------------- */
+
+.menu{ 
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  list-style-type: none;
+
+  gap: 25px 0;
+  padding: 10px 0;
+
+  &__li{
+    font-size: 1rem;
+
+    a {
+      color: $couleur__menu;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:visited{
+        color: $couleur__menu--visited;
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $dimension__ecran--desktop) {
+    
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    flex: 1 0 auto;
+
+    gap: 0 25px;
+    margin: 0 25px;
+  }
+}
+  
