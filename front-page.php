@@ -1,7 +1,8 @@
 <?php get_header();?>   
     <!--  -->
     <!--  -->
-    <h1> ---------------------------- FRONT-PAGE.PHP ---------------------------- </h1>
+    <!-- <h1> ---------------------------- FRONT-PAGE.PHP ---------------------------- </h1> -->
+     
     <section class="hero global">
         <div class="hero__contenu">
             <h1 class="hero__titre">Voyagez Autrement avec Mondo Voyages !</h1>
@@ -25,7 +26,6 @@
                 <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000" width="20" height="20">
                 <img src="https://s2.svgbox.net/social.svg?ic=wordpress&color=000" width="20" height="20">
             </div>
-
             <form class="hero__formulaire">
                 <ul class="formulaire">
                     <li class="formulaire__li">
@@ -53,7 +53,7 @@
     </section>
     <!--  -->
     <!--  -->
-    <section>
+    <!-- <section>
         <div class="galerie global">
             <h1 class="galerie__titre">Nos destinations favorites</h1>
             <div class="galerie__conteneur">
@@ -90,7 +90,7 @@
             </div>
 
         </div>
-    </section>
+    </section> -->
     <!--  -->
     <section class="populaire">
         <div class="global">
@@ -104,7 +104,6 @@
             <?php endwhile; endif; ?>
         </div>
     </section>
-    <footer></footer>
-    <?php wp_footer();?> 
+    <?php get_footer();?> 
 </body>
 </html>

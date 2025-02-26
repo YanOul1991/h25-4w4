@@ -10,14 +10,14 @@
   gap: 25px 0;
   padding: 10px 0;
 
-  &__li{
+  &-item{
     font-size: 1rem;
 
     a {
       color: $couleur__menu;
       text-transform: uppercase;
       text-decoration: none;
-
+      
       &:visited{
         color: $couleur__menu--visited;
       }

@@ -9,8 +9,14 @@
         <img src="voyage.jpg" alt="Image de voyage">
     </figure>
     <div class="carte__contenu">
-        <h2 class="carte__titre"></h2> <?php the_title();?> 
+        <?php 
+            if (has_post_thumbnail()) {
+                the_post_thumbnail('thumbnail'); 
+            }
+        ?> 
+        <h4 class="carte__titre"></h4> <?php the_title();?> 
         <p class="carte__description"></p><?php echo wp_trim_words(get_the_content(), 10, "...");?> 
-        <button class="carte__bouton carte__bouton--actif">Suite</button>
+        <a  class="carte__bouton carte__bouton--actif" href="<?php the_permalink();?> ">Suite ...</a>
+        <!-- <button class="carte__bouton carte__bouton--actif">Suite</button> -->
     </div>
 </article>

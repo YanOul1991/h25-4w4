@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: tp1-yo
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-*/
+
 /* ==================================================================== */
 /* ============= FICHIER PRINCIPALE DE LA STRUCTURE SASS =============  */
 /* ==================================================================== */
@@ -64,15 +64,15 @@ p {
   gap: 25px 0;
   padding: 10px 0;
 }
-.menu__li {
+.menu-item {
   font-size: 1rem;
 }
-.menu__li a {
+.menu-item a {
   color: rgb(75, 75, 75);
   text-transform: uppercase;
   text-decoration: none;
 }
-.menu__li a:visited {
+.menu-item a:visited {
   color: rgb(75, 75, 75);
 }
 @media screen and (min-width: 700px) {
@@ -198,6 +198,11 @@ p {
   }
 }
 
+.populaire .global {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 header {
   position: sticky;
   z-index: 1000;
@@ -288,6 +293,7 @@ header {
 .hero {
   position: relative;
   background-image: url("images/maldives.jpg");
+  background-repeat: no-repeat;
   min-height: 100vh;
 }
 .hero__titre {
@@ -353,4 +359,33 @@ header {
   .hero__formulaire {
     translate: -50% 50%;
   }
+}
+
+/* ---------------------- Pied de page ---------------------- */
+footer {
+  background-color: orange;
+  color: black;
+}
+
+.piedpage {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.piedpage__s1 {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3rem;
+}
+.piedpage__s1__externe {
+  flex: 0 0 20%;
+}
+.piedpage__s1__externe .menu {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1__adresse {
+  flex: 0 0 40%;
+}
+.piedpage__s1__description {
+  flex: 1 0 400px;
 }/*# sourceMappingURL=style.css.map */

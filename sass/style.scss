@@ -14,8 +14,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: tp1-yo
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-*/
-
 
 /* ==================================================================== */
 /* ============= FICHIER PRINCIPALE DE LA STRUCTURE SASS =============  */
@@ -40,3 +38,4 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "layout/entete";
 @import "layout/galerie";
 @import "layout/hero";
+@import "layout/footer";

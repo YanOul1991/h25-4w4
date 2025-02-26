@@ -1,0 +1,33 @@
+/* ---------------------- Pied de page ---------------------- */
+
+footer {
+    background-color: orange;
+    color: black;
+}
+
+.piedpage{
+    display: flex;
+    flex-flow: column nowrap;
+
+    &__s1 {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 3rem;
+        &__externe {
+            flex: 0 0 20%;
+            // ul du menu
+            & .menu {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        &__adresse{
+            flex: 0 0 40%;
+            &__coord{}
+            &__recherche{}
+        }
+        &__description{
+            flex: 1 0 400px;
+        }
+    }
+}
