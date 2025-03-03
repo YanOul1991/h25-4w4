@@ -5,12 +5,12 @@
      
     <section class="hero global">
         <div class="hero__contenu">
-            <h1 class="hero__titre">Voyagez Autrement avec Mondo Voyages !</h1>
+            <h1 class="hero__titre"><?php bloginfo('name');?></h1>
             <p class="hero__description">
-                Découvrez des destinations uniques et inoubliables avec Mondo Voyages. Nous voud offrons des expériences authentiques, des paysages à couper le souffle et des aventures sur mesure. Partez à la découverte du monde avec nous et créez des souvenirs impérissables.
+                <?php bloginfo('description');?> 
             </p>
             <p class="hero__courriel">
-                <a href="#">info@cmaisonneuve.qc.ca</a>
+                <a href="#"><?php bloginfo('admin_email');?> </a>
             </p>
             <p class="hero__adresse">
                 5800 Sherbrook-est - Montréal (Québec) H1X 2A2
