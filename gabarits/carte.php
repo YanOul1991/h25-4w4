@@ -18,6 +18,10 @@
         <p class="carte__description"></p><?php echo wp_trim_words(get_the_content(), 10, "...");?> 
         <a  class="carte__bouton carte__bouton--actif" href="<?php the_permalink();?> ">Suite ...</a>
         <?php the_category();?> 
+
+        <p>Température maximum : <?php the_field('temperature_maximum'); ?> °C</p>
+        <p>Température minimum : <?php the_field('temperature_minimum'); ?> °C</p>
+        <p>Température maximum : <?php the_field('temperature_maximum'); ?> °C</p>
         <!-- <button class="carte__bouton carte__bouton--actif">Suite</button> -->
     </div>
 </article>
