@@ -54,8 +54,7 @@
             </form>
         </div>
     </section>
-    <!--  -->
-    <!--  -->
+
     <!-- <section>
         <div class="galerie global">
             <h1 class="galerie__titre">Nos destinations favorites</h1>
@@ -91,7 +90,6 @@
                     <img src="images/destinations/img-fav-010.jpg" alt="aaaa" class="galerie__img">
                 </figure>
             </div>
-
         </div>
     </section> -->
 
@@ -105,7 +103,7 @@
                         </div>
                 <?php endif;?> 
             <?php endif?>
-            
+
             <div class="populaire__carte">
             <?php if (have_posts()) : while (have_posts()) : the_post() ?>
                 <?php get_template_part('gabarits/carte');?> 

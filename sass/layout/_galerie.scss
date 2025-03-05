@@ -2,57 +2,31 @@
 
 .populaire__galerie {
 
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-
-    &__titre {
-        font-size: 1.25rem;
+    figure.wp-block-gallery{
+        margin-bottom: 3vh;
     }
-
-    &__figure {
-        width: 80vw;
-        height: fit-content;
-        
-        padding: 0;
-        margin: 10px auto;
-
-        img {
-            display: block;
-            width: 100%;
-        }
-    }
-    
 
     @media screen and (min-width: $dimension__ecran--desktop) {
-        align-items: flex-start;
-
-        &__titre{
-            font-size: 1.5rem;
-        }
+        figure.wp-block-gallery{
+            display: none;
     
-        &__conteneur {
-            width: 100%;
-            display: grid;
-            gap: 10px 10px;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-        }
+            display: flex;
+            flex-flow: row wrap;
+            
+            figure{
+                display: none;
+                
+                height: max-content;
+                width: 20vw;
     
-        figure {
-            width: 100%;
-            background: green;
-
-            height: fit-content;
-    
-            padding: 0;
-            margin: 0;
-    
-            img {
-                display: block;
-                width: 100%;
+                .wp-block-image {
+                    width: 100%;
+                }
             }
+            
+    
         }
         
     }
 }
+    

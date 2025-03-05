@@ -178,8 +178,7 @@ p {
   align-items: center;
   gap: 25px 25px;
 }
-
-.carte {
+.populaire__carte .carte {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -187,15 +186,36 @@ p {
   border: 2px solid black;
   border-radius: 15px;
   overflow: hidden;
-  padding: 5px;
+  padding: 15px;
   width: 25vw;
   height: 25vw;
 }
-.carte__image img {
+.populaire__carte .carte__image img {
   width: 100%;
 }
-.carte__contenu {
-  background-color: aliceblue;
+.populaire__carte .carte__titre {
+  font-size: 2rem;
+}
+.populaire__carte .carte ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 25px;
+}
+.populaire__carte .carte ul li {
+  list-style: none;
+  background: orange;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 5px;
+}
+.populaire__carte .carte ul a {
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
 }
 
 /* ----------------- Layout ----------------- */
@@ -261,47 +281,21 @@ header {
 }
 
 /* Galries img destinations */
-.populaire__galerie {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-.populaire__galerie__titre {
-  font-size: 1.25rem;
-}
-.populaire__galerie__figure {
-  width: 80vw;
-  height: fit-content;
-  padding: 0;
-  margin: 10px auto;
-}
-.populaire__galerie__figure img {
-  display: block;
-  width: 100%;
+.populaire__galerie figure.wp-block-gallery {
+  margin-bottom: 3vh;
 }
 @media screen and (min-width: 700px) {
-  .populaire__galerie {
-    align-items: flex-start;
+  .populaire__galerie figure.wp-block-gallery {
+    display: none;
+    display: flex;
+    flex-flow: row wrap;
   }
-  .populaire__galerie__titre {
-    font-size: 1.5rem;
+  .populaire__galerie figure.wp-block-gallery figure {
+    display: none;
+    height: max-content;
+    width: 20vw;
   }
-  .populaire__galerie__conteneur {
-    width: 100%;
-    display: grid;
-    gap: 10px 10px;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-  .populaire__galerie figure {
-    width: 100%;
-    background: green;
-    height: fit-content;
-    padding: 0;
-    margin: 0;
-  }
-  .populaire__galerie figure img {
-    display: block;
+  .populaire__galerie figure.wp-block-gallery figure .wp-block-image {
     width: 100%;
   }
 }
