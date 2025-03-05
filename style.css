@@ -230,6 +230,10 @@ header {
   width: 100%;
   background-color: white;
 }
+.entete__logo img {
+  height: max-content;
+  width: 20vw;
+}
 @media screen and (min-width: 700px) {
   .entete__label {
     display: none;

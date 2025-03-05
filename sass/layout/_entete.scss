@@ -29,6 +29,13 @@ header {
         background-color: white;
     }
 
+    &__logo{
+        img{
+            height: max-content;
+            width: 20vw;
+        }
+    }
+
     @media screen and (min-width:  $dimension__ecran--desktop){
         &__label {
             display: none;
