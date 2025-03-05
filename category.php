@@ -1,5 +1,10 @@
 <?php get_header();?>   
-    <h1> <?php single_cat_title();?>  </h1>
+
+    <h1> -------------------------- category.php -------------------------- </h1>
+
+    <!-- Titre categorie -->
+    <h1> <?php  single_cat_title();?>  </h1>
+    <!-- description categorie -->
     <p> <?php echo category_description();?> </p>
     <section class="populaire">
         <div class="global">
