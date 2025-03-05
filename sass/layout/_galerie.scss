@@ -1,6 +1,6 @@
 /* Galries img destinations */
 
-.galerie {
+.populaire__galerie {
 
     display: flex;
     flex-flow: column nowrap;
@@ -39,8 +39,10 @@
             grid-template-rows: repeat(2, 1fr);
         }
     
-        &__figure {
+        figure {
             width: 100%;
+            background: green;
+
             height: fit-content;
     
             padding: 0;

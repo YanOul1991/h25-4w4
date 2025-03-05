@@ -94,17 +94,23 @@
 
         </div>
     </section> -->
-    <!--  -->
+
+    <!-- Section populaire -->
     <section class="populaire">
         <div class="global">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); 
-            if (in_category("galerie")) {
-                the_content();
-            }
-            else { ?>
+            <?php if(have_posts()) : the_post() ?>
+                <?php if (in_category("galerie")) : ?> 
+                        <div class="populaire__galerie">
+                            <?php the_content();?> 
+                        </div>
+                <?php endif;?> 
+            <?php endif?>
+            
+            <div class="populaire__carte">
+            <?php if (have_posts()) : while (have_posts()) : the_post() ?>
                 <?php get_template_part('gabarits/carte');?> 
-            <?php } ;?> 
             <?php endwhile; endif; ?>
+            </div>
         </div>
     </section>
     <?php get_footer();?> 
