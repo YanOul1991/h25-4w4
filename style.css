@@ -86,10 +86,11 @@ p {
 }
 
 .recherche {
-  display: none;
   width: 12rem;
   height: 1.6rem;
-  border: 1px solid rgba(0, 0, 0, 0.13);
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-right: 20px;
 }
 .recherche__input {
   border: none;
@@ -105,9 +106,12 @@ p {
   color: rgba(0, 0, 0, 0.13);
   font-style: italic;
 }
-.recherche__img {
-  flex: 0 0 20px;
-  padding: 3px;
+.recherche button {
+  display: none;
+  width: 0;
+  height: 100%;
+  background: none;
+  border: none;
 }
 @media screen and (min-width: 700px) {
   .recherche {
@@ -264,7 +268,7 @@ header {
 }
 .entete__logo img {
   height: max-content;
-  width: 20vw;
+  width: 30vw;
 }
 @media screen and (min-width: 700px) {
   .entete__label {
@@ -277,6 +281,10 @@ header {
     justify-content: flex-end;
     align-items: center;
     flex: 1;
+  }
+  .entete__logo img {
+    height: max-content;
+    width: clamp(200px, 20vh, 400px);
   }
 }
 
@@ -308,7 +316,8 @@ header {
   min-height: 100vh;
 }
 .hero__titre {
-  text-shadow: 2px 2px 5px rgb(0, 128, 90);
+  color: white;
+  text-shadow: 2px 2px 5px orange;
   font-size: 1.75rem;
 }
 .hero__description {

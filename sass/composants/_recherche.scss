@@ -1,8 +1,9 @@
-.recherche{
-    display: none;
+.recherche {
     width: 12rem;
     height: 1.6rem;
-    border: 1px solid rgba(0, 0, 0, 0.13);
+    border: 1px solid black;
+    border-radius: 2px;
+    margin-right: 20px;
     
     &__input{
         border: none;
@@ -21,9 +22,12 @@
         }
     }
 
-    &__img{
-        flex: 0 0 20px;
-        padding: 3px;
+    button {
+        display: none;
+        width: 0;
+        height: 100%;
+        background: none;
+        border: none;
     }
 
     @media screen and (min-width:  $dimension__ecran--desktop) {
