@@ -1,12 +1,13 @@
     <?php $hero_auteur = get_theme_mod('hero_auteur', 'Default title'); ?>
     <?php $hero_background = get_theme_mod('hero_background', ''); ?>
+    <?php $hero_couleur_texte = get_theme_mod('hero_color_txt', '');?> 
 
-    <section class="hero global" style="background-image: url(<?php echo $hero_background ?>);">
+    <section class="hero global" style="background-image: url(<?php echo $hero_background ?>); color: <?= $hero_couleur_texte ?>;">
         <div class="hero__contenu">
             <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
-            <p class="hero__description"><?php bloginfo('description'); ?></p>
+            <p class="hero__description"><?php bloginfo('description');?></p>
             <p class="hero__auteur">Auteur : <?= $hero_auteur ?></p>
-            <p class="hero__courriel"><a href="#"><?php bloginfo('admin_email'); ?> </a></p>
+            <p class="hero__courriel"><?php bloginfo('admin_email'); ?></p>
             <p class="hero__adresse">5800 Sherbrook-est - Montréal (Québec) H1X 2A2 </p>
             <p class="hero__telephone">514-254-7131 </p>
             <div class="hero__inscription"><a href="#">S'inscrire</a></div>

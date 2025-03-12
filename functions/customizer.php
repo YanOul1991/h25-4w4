@@ -9,14 +9,11 @@
         ));
 
         
-        ###################### AUTEUR ######################
-        ////////////////////////// Ajout des données
+        ########################################## AUTEUR
         $wp_customize->add_setting('hero_auteur', array(
             'default' => __('Yanis Oulmane', 'theme_tp'),
             'sanitize_callback' => 'sanitize_text_field'
         ));
-        
-        ////////////////////////// Ajout du contrôle des données
         $wp_customize->add_control('hero_auteur', array(
             'label' => __('Auteur', 'theme_tp'),
             'section' => 'hero_section',
@@ -24,7 +21,7 @@
         ));
         
         
-        ################## IMAGE BACKGROUND ##################
+        ########################################## IMAGE BACKGROUND 
         // Ajout donnee
         $wp_customize->add_setting('hero_background', array(
             'default' => '',
@@ -38,7 +35,7 @@
         )));
         
         
-        // Ajout donnee
+        ########################################## COULEUR ICONES
         $wp_customize->add_setting('hero_color', array(
             'default' => '',
             'sanitize_callback' => 'esc_url_raw',
@@ -48,45 +45,56 @@
             'label' => __('Couleur icone sociaux', 'theme_tp'),
             'section' => 'hero_section',
         )));
+
+        ########################################## COULEUR TEXT
+        $wp_customize->add_setting('hero_color_txt', array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_color_txt', array(
+            'label' => __('Couleur texte', 'theme_tp'),
+            'section' => 'hero_section',
+        )));
         
-        ######################################################
-        ####################### FOOTER #######################
+
+        /* =========================================================================== */
+        /* ==================== CUSTOMIZER POUR LA SECTION FOOTER ==================== */
+        /* =========================================================================== */
+
+        ########################################## AJOUT SECTION FOOTER
         $wp_customize->add_section('footer_section', array(
             'title' => __(' Section footer', 'theme_tp'),
             'priority' => 30,
         ));
         
 
-        /* -------------------- Footer hero -------------------- */
+        ########################################## FOOTER AUTEUR
         $wp_customize->add_setting('footer_auteur', array(
             'default' => __('Yanis Oulmane', 'theme_tp'),
             'sanitize_callback' => 'sanitize_text_field'
         ));
-        
         $wp_customize->add_control('footer_auteur', array(
             'label' => __('Auteur', 'theme_tp'),
             'section' => 'footer_section',
             'type' => 'text',
         ));
 
-        /* ------------------- Footer adresse ------------------- */
+        ########################################## FOOTER ADRESSE
         $wp_customize->add_setting('footer_adresse', array(
             'default' => __('Yanis Oulmane', 'theme_tp'),
             'sanitize_callback' => 'sanitize_text_field'
         ));
-        
         $wp_customize->add_control('footer_adresse', array(
             'label' => __('Adresse', 'theme_tp'),
             'section' => 'footer_section',
             'type' => 'text',
         ));
         
-        /* ------------------ Footer telephone ------------------ */
+        ########################################## FOOTER TELEPHONE
         $wp_customize->add_setting('footer_phone', array(
             'default' => __('Yanis Oulmane', 'theme_tp'),
             'sanitize_callback' => 'sanitize_text_field'
         ));
-        
         $wp_customize->add_control('footer_phone', array(
             'label' => __('Telephone', 'theme_tp'),
             'section' => 'footer_section',
