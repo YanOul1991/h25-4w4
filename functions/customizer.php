@@ -70,7 +70,7 @@
 
         ########################################## FOOTER AUTEUR
         $wp_customize->add_setting('footer_auteur', array(
-            'default' => __('Yanis Oulmane', 'theme_tp'),
+            'default' => __('FOOTER AUTEUR', 'theme_tp'),
             'sanitize_callback' => 'sanitize_text_field'
         ));
         $wp_customize->add_control('footer_auteur', array(
@@ -81,7 +81,7 @@
 
         ########################################## FOOTER ADRESSE
         $wp_customize->add_setting('footer_adresse', array(
-            'default' => __('Yanis Oulmane', 'theme_tp'),
+            'default' => __('FOOTER ADRESSE', 'theme_tp'),
             'sanitize_callback' => 'sanitize_text_field'
         ));
         $wp_customize->add_control('footer_adresse', array(
@@ -92,7 +92,7 @@
         
         ########################################## FOOTER TELEPHONE
         $wp_customize->add_setting('footer_phone', array(
-            'default' => __('Yanis Oulmane', 'theme_tp'),
+            'default' => __('FOOTER PHONE', 'theme_tp'),
             'sanitize_callback' => 'sanitize_text_field'
         ));
         $wp_customize->add_control('footer_phone', array(
