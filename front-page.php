@@ -4,7 +4,8 @@
     <!-- <h1> ---------------------------- FRONT-PAGE.PHP ---------------------------- </h1> -->
      <?php $hero_auteur = get_theme_mod('hero_auteur', 'Default title');?> 
      <?php $hero_background = get_theme_mod('hero_background', '');?> 
-     
+     <?php $hero_icon_couleur = get_theme_mod('hero_color', '');?> 
+     <?php echo $hero_icon_couleur;?>
     <section class="hero global" style="background-image: url(<?php echo $hero_background ?>);">
         <div class="hero__contenu">
             <h1 class="hero__titre"><?php bloginfo('name');?></h1>
@@ -15,9 +16,9 @@
             <p class="hero__telephone">514-254-7131 </p>
             <div class="hero__inscription"><a href="#">S'inscrire</a></div>
             <div class="hero__icone">
-                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=000000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000" width="20" height="20">
-                <img src="https://s2.svgbox.net/social.svg?ic=wordpress&color=000" width="20" height="20">
+                <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=<?php echo str_replace("#", "", $hero_icon_couleur);?>" width="40" height="40">
+                <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=<?php echo str_replace("#", "", $hero_icon_couleur);?>" width="40" height="40">
+                <img src="https://s2.svgbox.net/social.svg?ic=wordpress&color=<?php echo str_replace("#", "", $hero_icon_couleur);?>" width="40" height="40">
             </div>
             <form class="hero__formulaire">
                 <ul class="formulaire">
