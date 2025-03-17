@@ -12,6 +12,7 @@
                     "container" => "nav"
                 )); ?>
             </div>
+
             <?php wp_nav_menu(array(
                 'menu' => 'principal',
                 'container' => 'nav',
@@ -24,7 +25,6 @@
                 <div class="piedpage__s1__mail"><?php bloginfo('admin_email'); ?></div>
                 <div class="piedpage__s1__description"><?php bloginfo('description'); ?></div>
             </div>
-
             <?php get_template_part('gabarits/icones') ?>
         </section>
         <!-- --- -->

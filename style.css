@@ -24,6 +24,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 body {
   font-size: 16px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -61,6 +63,7 @@ p {
   flex-flow: column nowrap;
   align-items: center;
   list-style-type: none;
+  background-color: #ffa500;
   gap: 25px 0;
   padding: 10px 0;
 }
@@ -68,12 +71,13 @@ p {
   font-size: 1rem;
 }
 .menu-item a {
-  color: rgb(75, 75, 75);
+  color: white;
+  font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
 }
 .menu-item a:visited {
-  color: rgb(75, 75, 75);
+  color: white;
 }
 @media screen and (min-width: 700px) {
   .menu {
@@ -246,12 +250,13 @@ header {
 }
 
 .entete {
+  padding: 5px;
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #ffa500;
 }
 .entete__input {
   display: none;
@@ -264,11 +269,28 @@ header {
   position: absolute;
   top: 100%;
   width: 100%;
-  background-color: white;
+  color: white;
+  background-color: #ffa500;
+  margin: 0;
+  padding: 0;
+}
+.entete__logo {
+  position: relative;
+  height: 10vh;
+  width: 20vw;
+  padding: 0;
+  margin: 0;
+}
+.entete__logo .custom-logo-link {
+  padding: 0;
+  margin: 0;
 }
 .entete__logo img {
-  height: max-content;
-  width: 30vw;
+  position: absolute;
+  width: auto;
+  height: 90%;
+  padding: 0;
+  margin: 0;
 }
 @media screen and (min-width: 700px) {
   .entete__label {
@@ -281,10 +303,6 @@ header {
     justify-content: flex-end;
     align-items: center;
     flex: 1;
-  }
-  .entete__logo img {
-    height: max-content;
-    width: clamp(200px, 20vh, 400px);
   }
 }
 

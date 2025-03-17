@@ -13,7 +13,6 @@
     <header>
         <div class="entete">
             <figure class="entete__logo">
-                <!-- <img src="images/logos-icones/logomain.svg" alt="Logo" width="150"> -->
                 <?php 
                     if (function_exists('the_custom_logo')) {
                         the_custom_logo();
