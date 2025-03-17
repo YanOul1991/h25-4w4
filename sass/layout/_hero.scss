@@ -3,9 +3,9 @@
     position: relative;
     background-size: cover;
     margin: 0;
+    min-height: 100vh;
 
     &__contenu{
-        min-height: 100vh;
         background-size: cover;
 
         /* Display */
@@ -72,18 +72,22 @@
 
     &__formulaire {
         position: absolute;
+        color: black;
 
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        
-        // translate: 0 -100%;
-        box-sizing: border-box;
+        bottom: 20px;
+        left: 15px;
+        right: 15px;
 
-        // width: 70vw;
-        // left: 50%;
-        // translate: -50% 0;
-        // bottom: -50px;
+        border-radius: 10px;
+
+        background: $couleur_theme_main;
+
+        &__titre {
+            color: white;
+            text-transform: uppercase;
+            width: fit-content;
+            margin: 15px auto;
+        }
     }
 
     &__icone {
@@ -98,10 +102,6 @@
 
         &__description {
             max-width: 40%;
-        }
-
-        &__formulaire {
-            // translate: -50% 50%;
         }
     }
 }

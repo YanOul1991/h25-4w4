@@ -20,22 +20,23 @@
             <?php get_template_part('gabarits/icones'); ?>
         </div>
         <form class="hero__formulaire">
+            <h2 class="hero__formulaire__titre">Formulaire d'inscription</h2>
             <ul class="formulaire">
                 <li class="formulaire__li">
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" id="formulaire-nom" placeholder="Écrivez votre nom">
+                    <label for="formulaire-nom">Nom</label>
+                    <input type="text" name="nom" id="formulaire-nom" placeholder="Nom">
                 </li>
                 <li class="formulaire__li">
-                    <label for="nom">Prénom</label>
-                    <input type="text" name="prenom" id="formulaire-prenom" placeholder="Écrivez votre prénom">
+                    <label for="formulaire-prenom">Prénom</label>
+                    <input type="text" name="prenom" id="formulaire-prenom" placeholder="Prénom">
                 </li>
                 <li class="formulaire__li">
-                    <label for="nom">Courriel</label>
-                    <input type="text" name="courriel" id="formulaire-courriel" placeholder="Écrivez votre courriel">
+                    <label for="formulaire-courriel">Courriel</label>
+                    <input type="text" name="courriel" id="formulaire-courriel" placeholder="Courriel">
                 </li>
                 <li class="formulaire__li">
-                    <label for="nom">Téléphone</label>
-                    <input type="text" name="telephone" id="formulaire-telephone" placeholder="Écrivez votre téléphone">
+                    <label for="formulaire-telephone">Téléphone</label>
+                    <input type="text" name="telephone" id="formulaire-telephone" placeholder="Téléphone">
                 </li>
                 <li class="formulaire__li">
                     <input type="submit" value="S'inscrire">
