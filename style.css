@@ -212,22 +212,22 @@ p {
 /* ----------------- CARTE ----------------- */
 .populaire__carte {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  gap: 25px 25px;
+  width: 100%;
+  gap: 25px 0;
 }
 .populaire__carte .carte {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
+  aspect-ratio: 1/1;
+  position: relative;
+  width: 80%;
   border: 2px solid black;
-  border-radius: 15px;
-  overflow: hidden;
-  padding: 15px;
-  width: 25vw;
-  height: 25vw;
+  border-radius: 10px;
 }
 .populaire__carte .carte__image img {
   width: 100%;
@@ -461,4 +461,6 @@ footer {
 }
 .piedpage__s1__description {
   flex: 1 0 400px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* --------------- Section populaire --------------- *//*# sourceMappingURL=style.css.map */

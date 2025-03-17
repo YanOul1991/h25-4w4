@@ -24,19 +24,28 @@
 /* ----------------- CARTE ----------------- */
 .populaire__carte
 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    gap: 25px 0;
+
+
     .carte{
+
         display: flex;
-        flex-direction: column;
+        flex-flow: column nowrap;
         justify-content: space-between;
         align-items: center;
+
+        aspect-ratio: 1 / 1;
+        position: relative;
+        width: 80%;
         border: 2px solid black;
-        border-radius: 15px;
-        overflow: hidden;
-        padding: 15px;
-    
-        width: 25vw;
-        height: 25vw;
-    
+        border-radius: 10px;
+
         &__image {
             img{
                 width: 100%;
@@ -75,11 +84,4 @@
             }
         }
     }
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-
-    gap: 25px 25px;
-
 }
