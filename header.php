@@ -9,6 +9,8 @@
     <?php wp_head();?>
 </head>
 <body>
+
+
     <!-- HEADER -->
     <header>
         <div class="entete">

@@ -1,20 +1,30 @@
 /* ------------------- Hero ------------------- */
-
 .hero {
     position: relative;
-    background-image: url("images/maldives.jpg");
-    background-repeat: no-repeat;
-    min-height: 100vh;
+    background-size: cover;
+    margin: 0;
 
-    &__titre {
-        color: white;
-        text-shadow: 2px 2px 5px orange;
-        font-size: 1.75rem;
+    &__contenu{
+        min-height: 100vh;
+        background-size: cover;
+
+        /* Display */
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: start;
+        align-items: flex-start;
+        gap: 40px 0;
+
+        p{
+            font-size: clamp(1rem, 3vw, 1.6rem);
+            font-weight: 900;
+        }
     }
 
-    &__description {
-        font-size: 1rem;
-        font-weight: bold;
+    &__titre {
+        text-shadow: 3px 3px 0px orange;
+        font-size: 10vw;
+        text-transform: uppercase;
     }
 
     &__courriel {
@@ -62,10 +72,18 @@
 
     &__formulaire {
         position: absolute;
-        width: 70vw;
-        left: 50%;
-        translate: -50% 0;
-        bottom: -50px;
+
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        
+        // translate: 0 -100%;
+        box-sizing: border-box;
+
+        // width: 70vw;
+        // left: 50%;
+        // translate: -50% 0;
+        // bottom: -50px;
     }
 
     &__icone {
@@ -83,7 +101,7 @@
         }
 
         &__formulaire {
-            translate: -50% 50%;
+            // translate: -50% 50%;
         }
     }
 }
