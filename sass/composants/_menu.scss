@@ -6,7 +6,6 @@
   flex-flow: column nowrap;
   align-items: center;
   list-style-type: none;
-  background-color: $couleur_theme_main;
 
   gap: 25px 0;
   padding: 10px 0;
@@ -29,11 +28,11 @@
 
   @media screen and (min-width: $dimension__ecran--desktop) {
     
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     flex: 1 0 auto;
 
-    gap: 0 25px;
+    gap:25px;
     margin: 0 25px;
   }
 }

@@ -1,33 +1,42 @@
+
+/* ************************** BARRE DE RECHERCHE */
 .recherche {
     width: 12rem;
     height: 1.6rem;
-    border: 1px solid black;
-    border-radius: 2px;
-    margin-right: 20px;
-    
+    border: 2px solid white;
+    border-radius: 3px;
+
     &__input{
         border: none;
         outline: none;
-        background-color: rgba(0, 0, 0, 0.01);
+
+        width: 100%;
+        height: 100%;
+
+        /* Texte */
+        color: white;
+
+        // color: white;
+        background-color: rgba(0, 0, 0, 0.25);
         flex: 1;
         padding: 3px;
 
         &:hover{
-            background-color: rgba(0, 0, 0, 0.09);
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         &::placeholder{
-            color: rgba(0, 0, 0, 0.13);
+            color: white;
             font-style: italic;
         }
     }
 
     button {
         display: none;
-        width: 0;
-        height: 100%;
         background: none;
         border: none;
+        width: 0;
+        height: 100%;
     }
 
     @media screen and (min-width:  $dimension__ecran--desktop) {

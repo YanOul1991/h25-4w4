@@ -1,56 +1,59 @@
+
+/* ********************** HEADER GLOBALE */
 header {
     position: sticky;
-    z-index: 1000;
     top: 0;
+    z-index: 1000;
+    background-color: $couleur_theme_main;
 }
 
 .entete{
-    padding: 5px;
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    background-color: $couleur_theme_main;
+    &__navigation{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        padding: 10px 10px;
+        translate: 100% 0;
+        background-color: $couleur_theme_main;
+        transition: translate 50ms;
+
+        /* Display */
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
 
     &__input {
         display: none;
     }
 
     &__input:checked ~ &__navigation {
-        display: block;
+        translate: 0 0;
     } 
 
-    &__navigation{
-        display: none;
-        position: absolute;
-        top: 100%;
-        width: 100%;
-        color: white;
-        background-color: $couleur_theme_main;
-        margin: 0;
-        padding: 0;
-    }
 
     &__logo{
-        position: relative;
-        height: 10vh;
-        width: 20vw;
+        height: max-content;
+        width: max-content;
         padding: 0;
         margin: 0;
 
         .custom-logo-link{
-            padding: 0;
-            margin: 0;
+            width: max-content;
+            height: max-content;
         }
 
         img{
-            position: absolute;
-            width: auto;
-            height: 90%;
-            padding: 0;
-            margin: 0;
+            display: block;
+            width: clamp(170px, 20vw, 300px);
+            height: auto;
+            padding: 10px;
         }
     }
 
@@ -61,19 +64,12 @@ header {
 
         &__navigation {
             position: static;
-
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-end;
             align-items: center;
             flex: 1;
+            translate: 0 0;
         } 
-
-        // &__logo{
-        //     img{
-        //         height: max-content;
-        //         width: clamp(200px, 20vh, 400px);
-        //     }
-        // }
     }
 }

@@ -23,7 +23,7 @@
             <input type="checkbox" name="ouvremenu" id="ouvremenu" class="entete__input">
 
             <label for="ouvremenu" class="entete__label">
-                <img src="https://s2.svgbox.net/hero-solid.svg?ic=menu&color=000" width="32" height="32">
+                <img src="https://s2.svgbox.net/hero-solid.svg?ic=menu&color=ffffff" width="40" height="40">
             </label>
 
             <div class="entete__navigation">

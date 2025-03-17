@@ -1,15 +1,15 @@
-.global{
-    max-width: 100vw;
-    padding: 10vh 10vw;
+// .global{
+//     max-width: 100vw;
+//     padding: 10vh 10vw;
     
-    @media screen and (min-width: $dimension__ecran--desktop) {
-            max-width: 100vw;
-            padding: 10vh 3vw;
-    }
-}
+//     @media screen and (min-width: $dimension__ecran--desktop) {
+//             max-width: 100vw;
+//             padding: 10vh 3vw;
+//     }
+// }
 
-.populaire .global{
-    display: flex;
-    flex-flow: row wrap;
-}
+// .populaire .global{
+//     display: flex;
+//     flex-flow: row wrap;
+// }
 
