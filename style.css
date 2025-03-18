@@ -91,6 +91,9 @@ p {
 .menu-item a:visited {
   color: white;
 }
+.menu-item a:hover {
+  color: black;
+}
 @media screen and (min-width: 700px) {
   .menu {
     flex-flow: row wrap;
@@ -719,5 +722,70 @@ header {
   .singlepost {
     flex-flow: row nowrap;
     height: 80vh;
+  }
+}
+
+/* **************** SEARCH **************** */
+.search {
+  min-height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.search__item {
+  width: 80%;
+  padding: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffa500;
+  border-radius: 5px;
+}
+.search__title {
+  font-size: 2rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.search__infos {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.search__infos__image {
+  width: 100%;
+  height: auto;
+}
+.search__infos__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+.search__description {
+  width: 100%;
+  color: white;
+  font-size: 1.15rem;
+}
+@media screen and (min-width: 700px) {
+  .search {
+    margin: 50px 0;
+    gap: 25px;
+  }
+  .search__item {
+    width: clamp(400px, 100%, 1000px);
+  }
+  .search__infos {
+    flex-flow: row nowrap;
+  }
+  .search__title:hover {
+    color: black;
   }
 }/*# sourceMappingURL=style.css.map */

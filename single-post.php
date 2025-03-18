@@ -13,9 +13,9 @@
                 <?php the_category(); ?>
                 <p class="singlepost__infos__description"><?php echo strip_tags(get_the_content()); ?></p>
                 <div class="singlepost__infos__temperatures">
-                    <p>Température maximum : <?php the_field('temperature_maximum');?> °C</p>
-                    <p>Température minimum : <?php the_field('temperature_minimum');?> °C</p>
-                    <p>Température moyenne : <?php the_field('temperature_moyenne');?> °C</p>
+                    <p>Température maximum : <?php echo get_field('temperature_maximum') ? get_field('temperature_maximum') : rand(10, 30); ?> °C</p>
+                    <p>Température minimum : <?php echo get_field('temperature_minimum') ? get_field('temperature_minimum') : rand(10, 30); ?> °C</p>
+                    <p>Température moyenne : <?php echo get_field('temperature_moyenne') ? get_field('temperature_moyenne') : rand(10, 30); ?> °C</p>
                 </div>
             </section>
     <?php endwhile;

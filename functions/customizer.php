@@ -106,6 +106,9 @@ function theme_tp_customize_register($wp_customize)
         'label' => __('Couleur texte', 'theme_tp'),
         'section' => 'hero_section',
     )));
+
+
+    
 }
 
 add_action('customize_register', 'theme_tp_customize_register');
