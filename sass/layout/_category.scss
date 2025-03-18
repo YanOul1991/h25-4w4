@@ -1,0 +1,21 @@
+/* ********************* Category ********************* */
+
+.category {
+    &__titre {
+        margin-left: 50px;
+        font-size: 3rem;
+    }
+
+    &__description {
+        margin: 50px 0;
+        font-size: 1.25rem;
+    }
+
+    @media screen and (min-width: $dimension__ecran--desktop) {
+        &__description {
+            width: 40%;
+            height: auto;
+            margin: 50px 0 50px 50px;
+        }
+    }
+}

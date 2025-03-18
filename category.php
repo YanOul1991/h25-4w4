@@ -1,19 +1,18 @@
-<?php get_header();?>   
+<?php get_header(); ?>
+<main class="category global">
+    <h1 class="category__titre"><?php single_cat_title(); ?></h1>
+    <p class="category__description"><?php echo strip_tags(category_description());?></p>
 
-    <h1> -------------------------- category.php -------------------------- </h1>
-
-    <!-- Titre categorie -->
-    <h1> <?php  single_cat_title();?>  </h1>
-    <!-- description categorie -->
-    <p> <?php echo category_description();?> </p>
-    <section class="populaire">
-        <div class="global">
-        <div class="populaire__carte">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <?php get_template_part('gabarits/carte');?> 
-            <?php endwhile; endif; ?>
-        </div>
-    </section>
-    <?php wp_footer();?> 
+    <div class="populaire__carte">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php get_template_part('gabarits/carte'); ?>
+        <?php endwhile;
+        endif; ?>
+    </div>
+</main>
+<?php
+wp_footer();
+get_footer();
+?>
 </body>
 </html>

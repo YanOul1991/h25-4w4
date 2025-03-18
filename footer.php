@@ -22,10 +22,10 @@ $info_phone = get_theme_mod('infos_phone', '');
         <div class="piedpage__infos">
             <?php get_search_form();?>
             <div class="piedpage__coordonnes">
-                <div class="piedpage__s1__adresse_auteur">Auetur : <?php echo $info_auteur ?></div>
-                <div class="piedpage__s1__telephone">Téléphone  <?php echo $info_phone ?></div>
-                <div class="piedpage__s1__mail">Email :  <?php echo $info_email ?></div>
-                <div class="piedpage__s1__description"><?php bloginfo('description'); ?></div>
+                <div class="piedpage__coordonnes__auteur">Auetur : <?php echo $info_auteur ?></div>
+                <div class="piedpage__coordonnes__telephone">Téléphone  <?php echo $info_phone ?></div>
+                <div class="piedpage__coordonnes__mail">Email :  <?php echo $info_email ?></div>
+                <div class="piedpage__coordonnes__description"><?php bloginfo('description'); ?></div>
             </div>
             <?php get_template_part('gabarits/icones') ?>
         </div>

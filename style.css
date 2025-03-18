@@ -226,7 +226,6 @@ p {
   overflow: hidden;
   background: #ffa500;
   width: 100%;
-  border: 2px solid black;
   border-radius: 5px;
 }
 .populaire__carte .carte__titre {
@@ -609,4 +608,29 @@ header {
   }
 }
 
-/* --------------- Section populaire --------------- *//*# sourceMappingURL=style.css.map */
+/* --------------- Section populaire --------------- */
+.populaire {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 50px 0;
+}
+
+/* ********************* Category ********************* */
+.category__titre {
+  margin-left: 50px;
+  font-size: 3rem;
+}
+.category__description {
+  margin: 50px 0;
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 700px) {
+  .category__description {
+    width: 40%;
+    height: auto;
+    margin: 50px 0 50px 50px;
+  }
+}/*# sourceMappingURL=style.css.map */

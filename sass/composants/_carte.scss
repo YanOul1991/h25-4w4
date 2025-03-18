@@ -17,7 +17,6 @@
         overflow: hidden;
         background: $couleur_theme_main;
         width: 100%;
-        border: 2px solid black;
         border-radius: 5px;
 
         &__titre {
@@ -103,13 +102,11 @@
                 }
             }
             // ////////////// CATEGORIES STYLE END
-
             &__temp {
                 p {
                     font-size: 1rem;
                 }
             }
-            
         }
         // ////////////////////////// INFOS END
 
