@@ -1,43 +1,35 @@
-<?php $footer_auteur = get_theme_mod('footer_auteur'); ?>
-<?php $footer_adresse = get_theme_mod('footer_adresse'); ?>
-<?php $footer_phone = get_theme_mod('footer_phone'); ?>
+<?php
+$info_auteur = get_theme_mod('infos_auteur', 'Default title');
+$info_email = get_theme_mod('infos_email', '');
+$info_adresse = get_theme_mod('infos_adresse', '');
+$info_phone = get_theme_mod('infos_phone', '');
+?>
 
 <footer>
-    <div class="piedpage global">
-        <!-- Section1 -->
-        <section class="piedpage__s1">
-            <div class="piedpage__s1__externe">
-                <?php wp_nav_menu(array(
-                    "menu" => "liens",
-                    "container" => "nav"
-                )); ?>
-            </div>
-
+    <section class="piedpage">
+        <div class="piedpage__liens">
+            <?php wp_nav_menu(array(
+                'menu' => 'liens',
+                'container' => 'nav',
+                'container_class' => 'piedpage__liens__externe'
+            )); ?>
             <?php wp_nav_menu(array(
                 'menu' => 'principal',
                 'container' => 'nav',
-                'container_class' => 'entete__menu'
+                'container_class' => 'piedpage__liens__categories'
             )); ?>
-            <!-- Coordonnes -->
+        </div>
+        <div class="piedpage__infos">
+            <?php get_search_form();?>
             <div class="piedpage__coordonnes">
-                <div class="piedpage__s1__adresse_auteur"><?= $footer_auteur; ?></div>
-                <div class="piedpage__s1__telephone"><?= $footer_phone ?></div>
-                <div class="piedpage__s1__mail"><?php bloginfo('admin_email'); ?></div>
+                <div class="piedpage__s1__adresse_auteur">Auetur : <?php echo $info_auteur ?></div>
+                <div class="piedpage__s1__telephone">Téléphone  <?php echo $info_phone ?></div>
+                <div class="piedpage__s1__mail">Email :  <?php echo $info_email ?></div>
                 <div class="piedpage__s1__description"><?php bloginfo('description'); ?></div>
             </div>
             <?php get_template_part('gabarits/icones') ?>
-        </section>
-        <!-- --- -->
-
-        <!-- Section 2 -->
-        <section class="piedpage__s2"></section>
-        <!-- --- -->
-
-        <!-- Section 3 -->
-        <section class="piedpage__s3"></section>
-        <!-- --- -->
-    </div>
-    </div>
+        </div>
+    </section>
 </footer>
 <?php get_footer(); ?>
 <?php wp_footer(); ?>

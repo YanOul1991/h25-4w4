@@ -520,32 +520,93 @@ header {
 }
 
 /* ---------------------- Pied de page ---------------------- */
-footer {
-  background-color: orange;
-  color: black;
-}
-
 .piedpage {
+  background: #ffa500;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 0;
+  padding: 20px 0;
 }
-.piedpage__s1 {
+.piedpage__liens {
   display: flex;
-  flex-flow: row wrap;
-  gap: 3rem;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
 }
-.piedpage__s1__externe {
-  flex: 0 0 20%;
+.piedpage__liens nav > ul {
+  gap: 10px 0;
 }
-.piedpage__s1__externe .menu {
+.piedpage__liens a:hover {
+  color: black;
+}
+.piedpage__infos .recherche {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin: 10px;
+}
+.piedpage__infos .recherche__input {
+  padding: 5px;
+  font-size: 1rem;
+}
+.piedpage__coordonnes {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  font-size: 1rem;
+  font-weight: 900;
+  gap: 10px 0;
 }
-.piedpage__s1__adresse {
-  flex: 0 0 40%;
+.piedpage .hero__icone {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
-.piedpage__s1__description {
-  flex: 1 0 400px;
+.piedpage .hero__icone img {
+  width: 30px;
+}
+@media screen and (min-width: 700px) {
+  .piedpage {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  .piedpage__liens {
+    justify-content: center;
+    gap: 0px 100px;
+    width: 30%;
+    height: 100%;
+    flex-flow: row;
+  }
+  .piedpage__liens > nav {
+    height: 100%;
+  }
+  .piedpage__liens > nav ul {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .piedpage__infos {
+    width: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .piedpage__infos .recherche {
+    width: 70%;
+  }
+  .piedpage .hero__icone {
+    width: 30%;
+  }
 }
 
 /* --------------- Section populaire --------------- *//*# sourceMappingURL=style.css.map */

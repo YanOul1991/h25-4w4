@@ -1,33 +1,109 @@
 /* ---------------------- Pied de page ---------------------- */
+.piedpage {
 
-footer {
-    background-color: orange;
-    color: black;
-}
-
-.piedpage{
+    background: $couleur_theme_main;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0;
+    padding: 20px 0;
 
-    &__s1 {
+    &__liens {
         display: flex;
-        flex-flow: row wrap;
-        gap: 3rem;
-        &__externe {
-            flex: 0 0 20%;
-            // ul du menu
-            & .menu {
-                display: flex;
-                flex-direction: column;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+
+        nav>ul {
+            gap: 10px 0;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+    }
+
+    &__infos {
+        .recherche {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            margin: 10px;
+
+            &__input {
+                padding: 5px;
+                font-size: 1rem;
             }
         }
-        &__adresse{
-            flex: 0 0 40%;
-            &__coord{}
-            &__recherche{}
+    }
+
+    &__coordonnes {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        font-size: 1rem;
+        font-weight: 900;
+        gap: 10px 0;
+    }
+
+
+    .hero__icone {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 30px;
         }
-        &__description{
-            flex: 1 0 400px;
+    }
+
+    @media screen and (min-width: $dimension__ecran--desktop) {
+        flex-flow: row nowrap;
+        justify-content: center;
+
+        &__liens {
+            justify-content: center;
+            gap: 0px 100px;
+            width: 30%;
+            height: 100%;
+            flex-flow: row;
+
+            >nav {
+                height: 100%;
+
+                ul {
+                    height: 100%;
+
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: space-evenly;
+                    align-items: flex-start;
+                }
+            }
+        }
+
+        &__infos {
+            width: 30%;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-end;
+
+            .recherche {
+                width: 70%;
+            }
+        }
+
+        .hero__icone {
+            width: 30%;
         }
     }
 }
