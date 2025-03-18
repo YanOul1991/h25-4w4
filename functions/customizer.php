@@ -1,7 +1,6 @@
 <?php
 function theme_tp_customize_register($wp_customize)
 {
-
     /* ==================== CUSTOMIZER INFOS GLOBALES ==================== */
 
     ########################################## AJOUT SECTION DANS LE CUSTOMIZER
@@ -79,7 +78,6 @@ function theme_tp_customize_register($wp_customize)
         'default' => '',
         'sanitize_callback' => 'esc_url_raw',
     ));
-
     // Controle donnee
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
         'label' => __('Image background', 'theme_tp'),
@@ -107,8 +105,41 @@ function theme_tp_customize_register($wp_customize)
         'section' => 'hero_section',
     )));
 
-
+    /* ================ IMAGES BACKGROUND ALEATOIRES ================ */
+    $wp_customize->add_section('img_rand', array(
+        'title'    => __('Images background random', 'theme_tp'),
+        'priority' => 30,
+    ));
     
+    ###################### CONTROLE DU NOMBRE D'IMAGES RANDOM
+    $wp_customize->add_setting('img_rand_count', array(
+        'default'   => 1,
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('img_rand_count', array(
+        'label'   => __("Nombre d'images", 'theme_tp'),
+        'section' => 'img_rand',
+        'type'    => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 10,
+            'step' => 1, 
+        ),
+    ));
+
+    $nbImg = get_theme_mod("img_rand_count");
+
+
+    for ($i=0; $i < (int)$nbImg; $i++) { 
+        $wp_customize->add_setting('img_rand_'.$i, array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "img_rand_$i", array(
+            'label' => __('Image background '.$i + 1, 'theme_tp'),
+            'section' => 'img_rand',
+        )));
+    }
 }
 
 add_action('customize_register', 'theme_tp_customize_register');

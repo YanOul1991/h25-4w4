@@ -3,11 +3,25 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <section class="singlepost__main">
                 <h1 class="singlepost__main__titre"><?php the_title(); ?></h1>
-                <?php if (has_post_thumbnail()) : ?>
-                    <div class="singlepost__main__image">
-                        <?php the_post_thumbnail('medium'); ?>
-                    </div>
-                <?php endif; ?>
+                <div class="singlepost__main__image">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('large'); ?>
+                    <?php else : ?>
+                        <?php
+                        $imgRandom = [];
+
+                        for ($i = 0; $i < get_theme_mod("img_rand_count"); $i++) {
+                            $url = get_theme_mod("img_rand_$i");
+                            if (empty($url)) {
+                                break;
+                            }
+                            $imgRandom[] = $url;
+                        }
+                        $img = $imgRandom[array_rand($imgRandom)];
+                        ?>
+                        <img src="<?php echo esc_url($img) ?>" alt="Image générique">
+                    <?php endif; ?>
+                </div>
             </section>
             <section class="singlepost__infos">
                 <?php the_category(); ?>
