@@ -1,0 +1,110 @@
+/* ****************** SINGLE POSTS ****************** */
+
+.singlepost {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    height: auto;
+    
+    &__main {
+        width: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+
+        gap: 15px;
+
+        &__titre {
+            width: 100%;
+            font-size: clamp(1.5rem, 6vw, 2.15rem);
+        }
+
+        &__image {
+            width: 100%;
+            height: fit-content;
+    
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &__infos {
+        width: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+
+        .post-categories {
+            padding: 0;
+            margin: 0;
+
+            width: max-content;
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            
+            list-style: none;
+
+            // //////////////// LIST CATEGORIES START
+            li {
+                display: flex;
+
+                a {
+                    padding: 10px;
+                    background: $couleur_theme_main;
+                    border-radius: 5px;
+
+                    /* TEXT */
+                    color: white;
+                    font-size: 1.25rem;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-weight: 900;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+            // //////////////// LIST CATEGORIES END
+        }
+
+        &__description {
+            font-size: 1.15rem;
+        }
+
+        &__temperatures {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+
+            gap: 10px;
+
+            p {
+                font-size: 1rem;
+                font-weight: 900;
+            }
+        }
+    }
+
+    @media screen and (min-width: $dimension__ecran--desktop) {
+        flex-flow: row nowrap;
+        height: 80vh;
+    }
+}
