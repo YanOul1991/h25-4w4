@@ -221,40 +221,125 @@ p {
 .populaire__carte .carte {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  aspect-ratio: 1/1;
-  position: relative;
-  width: 80%;
+  overflow: hidden;
+  background: #ffa500;
+  width: 100%;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+.populaire__carte .carte__titre {
+  color: white;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  height: 4rem;
+  width: 100%;
+}
+.populaire__carte .carte__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
 }
 .populaire__carte .carte__image img {
   width: 100%;
+  height: auto;
 }
-.populaire__carte .carte__titre {
-  font-size: 2rem;
+.populaire__carte .carte__infos {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  top: 3rem;
+  bottom: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white;
 }
-.populaire__carte .carte ul {
+.populaire__carte .carte__infos__description {
+  height: 8vh;
+  font-size: 1rem;
+}
+.populaire__carte .carte__infos__voirplus {
+  padding: 5px;
+  color: rgb(0, 174, 255);
+  font-weight: 900;
+}
+.populaire__carte .carte__infos__voirplus:visited {
+  color: rgb(0, 174, 255);
+}
+.populaire__carte .carte__infos .post-categories {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 0 25px;
+  width: 100%;
+  padding: 5px 0;
 }
-.populaire__carte .carte ul li {
+.populaire__carte .carte__infos .post-categories li {
   list-style: none;
-  background: orange;
+  width: 40%;
+  height: 2rem;
+  border: 2px solid white;
   border-radius: 5px;
-  width: fit-content;
-  padding: 5px;
+  text-align: center;
+  line-height: 2rem;
 }
-.populaire__carte .carte ul a {
-  font-size: 1.3rem;
-  font-weight: 900;
-  text-transform: uppercase;
+.populaire__carte .carte__infos .post-categories li a {
+  color: white;
   text-decoration: none;
-  color: black;
+  font-weight: 900;
+}
+.populaire__carte .carte__infos .post-categories li a:visited {
+  color: white;
+}
+.populaire__carte .carte__infos__temp p {
+  font-size: 1rem;
+}
+@media screen and (min-width: 700px) {
+  .populaire__carte {
+    flex-flow: row wrap;
+    gap: clamp(10px, 2vw, 20px);
+  }
+  .populaire__carte .carte {
+    width: clamp(400px, 30%, 900px);
+    position: relative;
+  }
+  .populaire__carte .carte__titre {
+    height: 4rem;
+  }
+  .populaire__carte .carte__image {
+    aspect-ratio: 16/9;
+  }
+  .populaire__carte .carte__infos {
+    position: absolute;
+    top: 4rem;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  }
+  .populaire__carte .carte__infos .post-categories {
+    display: none;
+  }
+  .populaire__carte .carte__infos__description {
+    display: none;
+  }
+  .populaire__carte .carte__infos__temp {
+    display: none;
+  }
+  .populaire__carte .carte__infos:hover {
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0.5));
+  }
+  .populaire__carte .carte__infos:hover .post-categories {
+    display: flex;
+  }
+  .populaire__carte .carte__infos:hover .carte__infos__description {
+    display: block;
+  }
+  .populaire__carte .carte__infos:hover .carte__infos__temp {
+    display: block;
+  }
 }
 
 /* ----------------- Layout ----------------- */

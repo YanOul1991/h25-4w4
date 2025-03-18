@@ -1,86 +1,171 @@
-// <article class="carte carte--grande">
-//     <figure class="carte__image">
-//         <img src="voyage.jpg" alt="Image de voyage">
-//     </figure>
-//     <div class="carte__contenu">
-//         <?php 
-//             if (has_post_thumbnail()) {
-//                 the_post_thumbnail('thumbnail'); 
-//             }
-//         ?> 
-//         <h4 class="carte__titre"></h4> <?php the_title();?> 
-//         <p class="carte__description"></p><?php echo wp_trim_words(get_the_content(), 10, "...");?> 
-//         <a  class="carte__bouton carte__bouton--actif" href="<?php the_permalink();?> ">Suite ...</a>
-//         <?php the_category();?> 
-
-//         <p>Température maximum : <?php echo 50; # the_field('temperature_maximum'); ?> °C</p>
-//         <p>Température minimum : <?php echo 50; # the_field('temperature_minimum'); ?> °C</p>
-//         <p>Température maximum : <?php echo 50; # the_field('temperature_maximum'); ?> °C</p>
-//         <!-- <button class="carte__bouton carte__bouton--actif">Suite</button> -->
-//     </div>
-// </article>
-
-
 /* ----------------- CARTE ----------------- */
-.populaire__carte
-{
+.populaire__carte {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    
+
     width: 100%;
     gap: 25px 0;
 
-
-    .carte{
+    .carte {
 
         display: flex;
         flex-flow: column nowrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
-
-        aspect-ratio: 1 / 1;
-        position: relative;
-        width: 80%;
+        overflow: hidden;
+        background: $couleur_theme_main;
+        width: 100%;
         border: 2px solid black;
-        border-radius: 10px;
+        border-radius: 5px;
+
+        &__titre {
+            color: white;
+            box-sizing: border-box;
+            padding: 0 10px;
+            font-size: 1.5rem;
+            height: 4rem;
+            width: 100%;
+        }
 
         &__image {
-            img{
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+
+            img {
                 width: 100%;
+                height: auto;
             }
         }
-    
-        &__contenu {
 
-        }
-    
-        &__titre {
-            font-size: 2rem;
-        }
-
-        ul{
+        // /////////////////////////// INFOS START
+        &__infos {
             display: flex;
-            flex-flow: row nowrap;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 0 25px;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            width: 100%;
+            top: 3rem;
+            bottom: 0;
 
-            li{
-                list-style: none;
-                background: orange;
-                border-radius: 5px;
-                width: fit-content;
-                padding: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+
+            color: white;
+
+            &__description {
+                height: 8vh;
+                font-size: 1rem;
             }
 
-            a{
-                font-size: 1.3rem;
+            &__voirplus {
+                padding: 5px;
+                color: rgb(0, 174, 255);
                 font-weight: 900;
-                text-transform: uppercase;
-                text-decoration: none;
-                color: black
+
+                &:visited {
+                    color: rgb(0, 174, 255);
+                }
+            }
+
+            // ////////////// CATEGORIES STYLE START
+            .post-categories {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-evenly;
+                align-items: center;
+
+                width: 100%;
+                padding: 5px 0;
+
+                li {
+                    list-style: none;
+
+                    width: 40%;
+                    height: 2rem;
+                    border: 2px solid white;
+                    border-radius: 5px;
+
+                    text-align: center;
+                    line-height: 2rem;
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        font-weight: 900;
+
+                        &:visited {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            // ////////////// CATEGORIES STYLE END
+
+            &__temp {
+                p {
+                    font-size: 1rem;
+                }
+            }
+            
+        }
+        // ////////////////////////// INFOS END
+
+
+    }
+
+    @media screen and (min-width: $dimension__ecran--desktop) {
+        flex-flow: row wrap;
+        gap: clamp(10px, 2vw, 20px);
+
+        .carte {
+            width: clamp(400px, 30%, 900px);
+            position: relative;
+            
+            &__titre {
+                height: 4rem;
+            }
+            
+            &__image {
+                aspect-ratio: 16 / 9;
+            }
+            
+            &__infos {
+                position: absolute;
+                top: 4rem;
+                bottom: 0;
+                background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+                
+                .post-categories {
+                    display: none;
+                }
+
+                &__description {
+                    display: none;
+                }
+
+                &__temp {
+                    display: none;
+                }
+
+                &:hover {
+                    background: linear-gradient(to right, black, rgba(0, 0, 0, 0.50));
+
+                    .post-categories {
+                        display: flex;
+                    }
+
+                    .carte__infos__description {
+                        display: block;
+                    }
+    
+                    .carte__infos__temp {
+                        display: block;
+                    }
+    
+                }
             }
         }
     }
