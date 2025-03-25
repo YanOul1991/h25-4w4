@@ -1,0 +1,60 @@
+/************** STYLE PAGE NOT FOUND **************/
+.notfound {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Not found infos */
+    &__infos {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 25px;
+
+        text-align: center;
+
+        &__titre {
+            font-size: 2rem;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Image */
+    &__image {
+        width: 20vw;
+        height: max-content;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /* Menu */
+    &__menu {
+        a {
+            font-size: 1rem;
+            color: black;
+            background: $couleur_theme_main;
+
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 15px;
+
+            &:visited {
+                color: black;
+            }
+
+            &:hover {
+                
+                color: $couleur_theme_main;
+            }
+        }
+    }
+}
