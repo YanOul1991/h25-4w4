@@ -110,7 +110,7 @@ function theme_tp_customize_register($wp_customize)
         'title'    => __('Images background random', 'theme_tp'),
         'priority' => 30,
     ));
-    
+
     ###################### CONTROLE DU NOMBRE D'IMAGES RANDOM
     $wp_customize->add_setting('img_rand_count', array(
         'default'   => 1,
@@ -123,23 +123,59 @@ function theme_tp_customize_register($wp_customize)
         'input_attrs' => array(
             'min' => 1,
             'max' => 10,
-            'step' => 1, 
+            'step' => 1,
         ),
     ));
 
     $nbImg = get_theme_mod("img_rand_count");
-
-
-    for ($i=0; $i < (int)$nbImg; $i++) { 
-        $wp_customize->add_setting('img_rand_'.$i, array(
+    for ($i = 0; $i < (int)$nbImg; $i++) {
+        $wp_customize->add_setting('img_rand_' . $i, array(
             'default' => '',
             'sanitize_callback' => 'esc_url_raw',
         ));
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "img_rand_$i", array(
-            'label' => __('Image background '.$i + 1, 'theme_tp'),
+            'label' => __('Image background ' . $i + 1, 'theme_tp'),
             'section' => 'img_rand',
         )));
     }
+
+    #################################################### 404 not found
+    $wp_customize->add_section('notfound', array(
+        "title" => __("Page 404", "theme_tp"),
+        "priority" => 30,
+    ));
+
+    ######## IMAGE BACKGROUND
+    $wp_customize->add_setting('notfound_background_image', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'notfound_background_image', array(
+        'label' => __('Image background', 'theme_tp'),
+        'section' => 'notfound',
+    )));
+
+    ####### TITRE
+    $wp_customize->add_setting('notfound_titre', array(
+        'default' => __('ERROR 404 - Not found', 'theme_tp'),
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('notfound_titre', array(
+        'label' => __('Titre', 'theme_tp'),
+        'section' => 'notfound',
+        'type' => 'text',
+    ));
+
+    ##### MESSAGE
+    $wp_customize->add_setting('notfound_description', array(
+        'default' => __('Message'),
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('notfound_description', array(
+        'label' => __('Description', 'theme_tp'),
+        'section' => 'notfound',
+        'type' => 'text',
+    ));
 }
 
 add_action('customize_register', 'theme_tp_customize_register');
