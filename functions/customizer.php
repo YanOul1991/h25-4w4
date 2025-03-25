@@ -146,11 +146,11 @@ function theme_tp_customize_register($wp_customize)
     ));
 
     ######## IMAGE BACKGROUND
-    $wp_customize->add_setting('notfound_background_image', array(
+    $wp_customize->add_setting('notfound_image', array(
         'default' => '',
         'sanitize_callback' => 'esc_url_raw',
     ));
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'notfound_background_image', array(
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'notfound_image', array(
         'label' => __('Image background', 'theme_tp'),
         'section' => 'notfound',
     )));
