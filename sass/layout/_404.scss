@@ -4,6 +4,7 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
 
     /* Not found infos */
     &__infos {
@@ -39,10 +40,10 @@
     /* Menu */
     &__menu {
         a {
-            font-size: 1rem;
-            color: black;
             background: $couleur_theme_main;
 
+            font-size: 1rem;
+            color: black;
             border: 1px solid black;
             border-radius: 5px;
             padding: 15px;
@@ -52,8 +53,41 @@
             }
 
             &:hover {
-                
                 color: $couleur_theme_main;
+                background: white;
+            }
+        }
+    }
+
+    /* Search */
+    &__search {
+        width: 50%;
+        height: 2.5rem;
+
+        .recherche {
+            width: 100%;
+            height: 100%;
+
+            &__input {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    /* Icones */
+    &__icons {
+        width: 50%;
+        max-width: 500px;
+        div {
+            width: 100%;
+            margin: 0;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+
+            img {
+                display: block;
             }
         }
     }
