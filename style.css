@@ -794,9 +794,9 @@ header {
 .notfound {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 50px;
+  min-height: 70vh;
   /* Not found infos */
   /* Image */
   /* Menu */

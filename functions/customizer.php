@@ -176,6 +176,16 @@ function theme_tp_customize_register($wp_customize)
         'section' => 'notfound',
         'type' => 'text',
     ));
+    ############ Couleur not found
+    $wp_customize->add_setting('notfound_color', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'notfound_color', array(
+        'label' => __('Couleur icone sociaux', 'theme_tp'),
+        'section' => 'notfound',
+    )));
 }
 
 add_action('customize_register', 'theme_tp_customize_register');
