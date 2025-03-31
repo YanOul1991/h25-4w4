@@ -23,6 +23,7 @@
         &__titre {
             width: 70%;
             background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
             padding: 50px;
             font-size: clamp(2rem, 7vw, 4rem);
         }
@@ -30,8 +31,9 @@
         &__description {
             width: 70%;
             background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
             padding: 50px;
-            font-size: 1rem;
+            font-size: 1.25rem;
         }
     }
 
@@ -50,6 +52,8 @@
     /* Btn retour à l'accueil */
     &__retour {
         font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 900;
         display: flex;
 
         >a {
@@ -58,10 +62,10 @@
             padding: 15px;
             background: $couleur_theme_main;
             text-decoration: none;
-            color: black;
+            color: white;
 
             &:visited {
-                color: black;
+                color: white;
             }
 
             &:hover {
@@ -73,10 +77,16 @@
 
     /* Menu */
     &__menu {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
         .menu-item {
             display: flex;
             a {
                 background: $couleur_theme_main;
+                text-align: center;
                 font-size: 1rem;
                 color: black;
                 border: 1px solid black;
@@ -96,40 +106,40 @@
     }
 
     /* Search */
-    &__search {
-        width: 50%;
-        height: 2.5rem;
+    // &__search {
+    //     width: 50%;
+    //     height: 2.5rem;
 
-        .recherche {
-            width: 100%;
-            height: 100%;
+    //     .recherche {
+    //         width: 100%;
+    //         height: 100%;
 
-            &__input {
-                font-size: 2rem;
-            }
-        }
-    }
+    //         &__input {
+    //             font-size: 2rem;
+    //         }
+    //     }
+    // }
 
     /* Icones */
-    &__icons {
-        width: 50%;
-        max-width: 500px;
+    // &__icons {
+    //     width: 50%;
+    //     max-width: 500px;
 
-        div {
-            width: 100%;
-            margin: 0;
+    //     div {
+    //         width: 100%;
+    //         margin: 0;
 
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-evenly;
+    //         display: flex;
+    //         flex-flow: row nowrap;
+    //         justify-content: space-evenly;
 
-            img {
-                display: block;
-            }
-        }
-    }
+    //         img {
+    //             display: block;
+    //         }
+    //     }
+    // }
 
-    @media screen and (min-width: $dimension__ecran--desktop) {
+    @media screen and (min-width: 576px) and (max-width: 992px) {
 
         &__titre {
             font-size: 4rem;
@@ -138,5 +148,12 @@
         &__description {
             max-width: 40%;
         }
+    }
+    @media screen and (min-width: 993px) {
+
+        &__infos__titre {
+            font-size: 4rem;
+        }
+
     }
 }
