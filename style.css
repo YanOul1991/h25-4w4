@@ -797,8 +797,12 @@ header {
   justify-content: center;
   align-items: center;
   min-height: 70vh;
+  gap: 25px;
+  background-size: cover;
+  background-position: center;
   /* Not found infos */
   /* Image */
+  /* Btn retour à l'accueil */
   /* Menu */
   /* Search */
   /* Icones */
@@ -812,21 +816,40 @@ header {
   text-align: center;
 }
 .notfound__infos__titre {
-  font-size: 2rem;
+  width: 70%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 50px;
+  font-size: clamp(2rem, 7vw, 4rem);
 }
 .notfound__infos__description {
-  font-size: 1.5rem;
+  width: 70%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 50px;
+  font-size: 1rem;
 }
-.notfound__image {
-  width: 20vw;
-  height: max-content;
+.notfound__retour {
+  font-size: 2rem;
+  display: flex;
 }
-.notfound__image img {
-  display: block;
-  width: 100%;
-  height: auto;
+.notfound__retour > a {
+  text-align: center;
+  border-radius: 5px;
+  padding: 15px;
+  background: #ffa500;
+  text-decoration: none;
+  color: black;
 }
-.notfound__menu a {
+.notfound__retour > a:visited {
+  color: black;
+}
+.notfound__retour > a:hover {
+  color: #ffa500;
+  background: white;
+}
+.notfound__menu .menu-item {
+  display: flex;
+}
+.notfound__menu .menu-item a {
   background: #ffa500;
   font-size: 1rem;
   color: black;
@@ -834,10 +857,10 @@ header {
   border-radius: 5px;
   padding: 15px;
 }
-.notfound__menu a:visited {
+.notfound__menu .menu-item a:visited {
   color: black;
 }
-.notfound__menu a:hover {
+.notfound__menu .menu-item a:hover {
   color: #ffa500;
   background: white;
 }
@@ -865,4 +888,12 @@ header {
 }
 .notfound__icons div img {
   display: block;
+}
+@media screen and (min-width: 700px) {
+  .notfound__titre {
+    font-size: 4rem;
+  }
+  .notfound__description {
+    max-width: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */

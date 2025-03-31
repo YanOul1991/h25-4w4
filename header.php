@@ -25,8 +25,8 @@
                     'container' => 'nav',
                     'container_class' => 'entete__menu'
                 )); ?>
+                <?php get_search_form() ?>
             </div>
-            <?php get_search_form() ?>
         </div>
     </header>
     <!-- Monserrat -->

@@ -5,6 +5,10 @@
     justify-content: center;
     align-items: center;
     min-height: 70vh;
+    gap: 25px;
+    
+    background-size: cover;
+    background-position: center;
 
     /* Not found infos */
     &__infos {
@@ -17,36 +21,44 @@
         text-align: center;
 
         &__titre {
-            font-size: 2rem;
+            width: 70%;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            font-size: clamp(2rem, 7vw, 4rem);
         }
 
         &__description {
-            font-size: 1.5rem;
+            width: 70%;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            font-size: 1rem;
         }
     }
 
     /* Image */
-    &__image {
-        width: 20vw;
-        height: max-content;
+    // &__image {
+    //     width: 20vw;
+    //     height: max-content;
 
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-    }
+    //     img {
+    //         display: block;
+    //         width: 100%;
+    //         height: auto;
+    //     }
+    // }
 
-    /* Menu */
-    &__menu {
-        a {
-            background: $couleur_theme_main;
+    /* Btn retour à l'accueil */
+    &__retour {
+        font-size: 2rem;
+        display: flex;
 
-            font-size: 1rem;
-            color: black;
-            border: 1px solid black;
+        >a {
+            text-align: center;
             border-radius: 5px;
             padding: 15px;
+            background: $couleur_theme_main;
+            text-decoration: none;
+            color: black;
 
             &:visited {
                 color: black;
@@ -55,6 +67,30 @@
             &:hover {
                 color: $couleur_theme_main;
                 background: white;
+            }
+        }
+    }
+
+    /* Menu */
+    &__menu {
+        .menu-item {
+            display: flex;
+            a {
+                background: $couleur_theme_main;
+                font-size: 1rem;
+                color: black;
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 15px;
+                    
+                &:visited {
+                    color: black;
+                }
+    
+                &:hover {
+                    color: $couleur_theme_main;
+                    background: white;
+                }
             }
         }
     }
@@ -78,6 +114,7 @@
     &__icons {
         width: 50%;
         max-width: 500px;
+
         div {
             width: 100%;
             margin: 0;
@@ -89,6 +126,17 @@
             img {
                 display: block;
             }
+        }
+    }
+
+    @media screen and (min-width: $dimension__ecran--desktop) {
+
+        &__titre {
+            font-size: 4rem;
+        }
+
+        &__description {
+            max-width: 40%;
         }
     }
 }
