@@ -344,6 +344,11 @@ p {
   }
 }
 
+.categorie__ul {
+  display: flex;
+  flex-flow: row;
+}
+
 /* ----------------- Layout ----------------- */
 .global {
   padding: 20px;
