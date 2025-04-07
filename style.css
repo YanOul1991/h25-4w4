@@ -344,9 +344,29 @@ p {
   }
 }
 
+.destination {
+  width: 100%;
+}
+
 .categorie__ul {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.categorie__ul__li {
+  list-style: none;
+  background: #ffa500;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.categorie__ul__li:hover {
+  color: white;
+  cursor: pointer;
 }
 
 /* ----------------- Layout ----------------- */
