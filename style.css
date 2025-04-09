@@ -931,7 +931,59 @@ header {
 }
 .destination__item {
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 10px;
   background-color: orange;
   padding: 10px;
   border-radius: 5px;
+  width: 100%;
+}
+.destination__item:hover {
+  cursor: pointer;
+}
+.destination__item:hover h3 {
+  color: white;
+}
+.destination__item p {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid white;
+  font-size: 1.1rem;
+  width: 75%;
+  color: white;
+  height: 0px;
+  overflow: hidden;
+  transition: height 250ms;
+}
+.destination__item a {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+.destination__item a:visited {
+  color: black;
+}
+.destination__item a:hover {
+  color: white;
+}
+.destination__item a:hover::before {
+  content: "> ";
+}
+.destination__item a:hover::after {
+  content: " <";
+}
+.destination__item.displayed p {
+  height: 125px;
+  transition: height 250ms;
+}
+.destination__item.displayed a {
+  height: auto;
 }/*# sourceMappingURL=style.css.map */

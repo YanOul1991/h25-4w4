@@ -34,6 +34,10 @@ function fetchStuff(event) {
                     <a href="${article.link}">Lire plus</a>
                 `;
                 destinationList.appendChild(articleElement);
+
+                articleElement.addEventListener("click", ()=> {
+                    articleElement.classList.toggle("displayed");
+                })
             });
         })
         .catch(error => console.error('Erreur lors de la récupération des articles:', error));

@@ -17,8 +17,73 @@
 
     &__item {
         position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 10px;
         background-color: orange;
         padding: 10px;
         border-radius: 5px;
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+
+            h3 {
+                color: white;
+            }
+        }
+        
+        p {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 2px solid white;
+            font-size: 1.10rem;
+            width: 75%;
+            color: white;
+            height: 0px;
+            overflow: hidden;
+            transition: height 250ms;
+        }
+
+        a {
+            position: relative;
+            overflow: hidden;
+            height: 0;
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 1.15rem;
+
+            &:visited {
+                color: black;
+            }
+
+            &:hover {
+                color: white;
+
+                &::before {
+                    // position: absolute;
+                    content: '> ';
+                }
+                &::after {
+                    // position: absolute;
+                    content: ' <';
+                }
+            }
+        }
+
+        &.displayed {
+            p {
+                height: 125px;
+                transition: height 250ms;
+            }
+
+            a {
+                height: auto;
+            }
+        }
     }
 }
