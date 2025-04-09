@@ -26,8 +26,15 @@
             '/js/destination.js'),
             true
         );
+        wp_enqueue_script(
+            'carousesel',
+            get_template_directory_uri() . '/js/caroussel.js',
+            array(),
+            filemtime(get_template_directory() . 
+            '/js/caroussel.js'),
+            true
+        );
     }
-
 
     /*
     */

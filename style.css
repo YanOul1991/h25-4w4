@@ -912,4 +912,26 @@ header {
   .notfound__infos__titre {
     font-size: 4rem;
   }
+}
+
+.destination {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.destination__list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 60%;
+}
+.destination__item {
+  position: relative;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+.destination {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    &__list {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        width: 60%;
+    }
+
+    &__item {
+        position: relative;
+        background-color: orange;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
