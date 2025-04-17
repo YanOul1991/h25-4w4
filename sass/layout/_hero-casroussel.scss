@@ -1,0 +1,8 @@
+.hero__caroussel {
+    opacity: 0;
+    transition: opacity 500ms;
+
+    &.displayed {
+        opacity: 1;
+    }
+}

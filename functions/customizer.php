@@ -84,8 +84,23 @@ function theme_tp_customize_register($wp_customize)
         'section' => 'hero_section',
     )));
 
-    // $nbImg = get_theme_mod("img_rand_count");
-    for ($i = 0; $i < 3; $i++) {
+    ########################################## IMAGE CAROUSSEL 
+    $wp_customize->add_setting('img_caroussel_count', array(
+        'default'   => 1,
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('img_caroussel_count', array(
+        'label'   => __("Nombre d'images", 'theme_tp'),
+        'section' => 'hero_section',
+        'type'    => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 10,
+            'step' => 1,
+        ),
+    ));
+    $nbImgCaroussel = get_theme_mod("img_caroussel_count");
+    for ($i = 0; $i < $nbImgCaroussel; $i++) {
         $wp_customize->add_setting('img_carousel' . $i, array(
             'default' => '',
             'sanitize_callback' => 'esc_url_raw',

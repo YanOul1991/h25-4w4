@@ -1,14 +1,25 @@
-    <?php 
-    $info_auteur = get_theme_mod('infos_auteur', 'Default title'); 
+    <?php
+    $info_auteur = get_theme_mod('infos_auteur', 'Default title');
     $info_email = get_theme_mod('infos_email', '');
     $info_adresse = get_theme_mod('infos_adresse', '');
     $info_phone = get_theme_mod('infos_phone', '');
 
-    $hero_background = get_theme_mod('hero_background', ''); 
+    $hero_background = get_theme_mod('hero_background', '');
     $hero_couleur_texte = get_theme_mod('hero_color_txt', '');
     ?>
 
-    <section class="hero global" style="background-image: url(<?php echo $hero_background ?>); color: <?= $hero_couleur_texte ?>;">
+    <section class="hero global" style="color: <?= $hero_couleur_texte ?>;">
+        <?php $nbImgCar = (int)get_theme_mod("img_caroussel_count");?>
+
+        <?php for ($i = 0; $i < $nbImgCar; $i++) : ?>
+            <div class="hero__caroussel <?php echo $i == 0 ? "displayed" : "" ?>" style="background-image: url(<?php echo get_theme_mod("img_carousel$i") ?>)"></div>
+        <?php endfor; ?>
+        <div class="hero__radio">
+            <?php for ($i = 0; $i < $nbImgCar; $i++) : ?>
+                <input class="hero__radio__input" data-id_radio="<?php echo $i ?>" type="radio" name="caroussel" id="" <?php echo $i == 0 ? "checked" : "" ?>>
+            <?php endfor; ?>
+        </div>
+
         <div class="hero__contenu">
             <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
             <p class="hero__description"><?php bloginfo('description'); ?></p>

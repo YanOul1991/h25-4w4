@@ -35,7 +35,7 @@ function fetchStuff(event) {
                 `;
                 destinationList.appendChild(articleElement);
 
-                articleElement.addEventListener("click", ()=> {
+                articleElement.addEventListener("click", () => {
                     articleElement.classList.toggle("displayed");
                 })
             });
