@@ -474,6 +474,8 @@ header {
   right: 0;
   top: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   z-index: -1;
 }
@@ -490,14 +492,31 @@ header {
   font-size: clamp(1rem, 3vw, 1.6rem);
   font-weight: 900;
 }
+@keyframes afficher-contenu {
+  to {
+    translate: 0 0;
+  }
+}
 .hero__titre {
   text-shadow: 3px 3px 0px orange;
   font-size: 10vw;
   text-transform: uppercase;
+  translate: -150% 0;
+  animation: afficher-contenu 0.25s 0s linear forwards;
+}
+.hero__auteur {
+  translate: -150% 0;
+  animation: afficher-contenu 0.5s 0.1s linear forwards;
+}
+.hero__description {
+  translate: -150% 0;
+  animation: afficher-contenu 0.5s 0.2s linear forwards;
 }
 .hero__courriel {
   font-size: 1rem;
   font-weight: bold;
+  translate: -150% 0;
+  animation: afficher-contenu 0.5s 0.3s linear forwards;
 }
 .hero__courriel a {
   text-decoration: none;
@@ -509,10 +528,14 @@ header {
 .hero__adresse {
   font-size: 1rem;
   font-weight: bold;
+  translate: -150% 0;
+  animation: afficher-contenu 0.5s 0.4s linear forwards;
 }
 .hero__telephone {
   font-size: 1rem;
   font-weight: bold;
+  translate: -150% 0;
+  animation: afficher-contenu 0.5s 0.5s linear forwards;
 }
 .hero__inscription {
   background-color: rgba(255, 255, 255, 0.35);

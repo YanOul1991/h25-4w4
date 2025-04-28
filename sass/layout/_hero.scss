@@ -13,8 +13,8 @@
         right: 0;
         top: 0;
         bottom: 0;
-        // width: 100%;
-        // height: 100%;
+        width: 100%;
+        height: 100%;
         background-size: cover;
         z-index: -1;
     }
@@ -33,21 +33,42 @@
             font-weight: 900;
         }
     }
+    
+    @keyframes afficher-contenu {
+        to {
+            translate: 0 0;
+        }
+    }
 
     &__titre {
         text-shadow: 3px 3px 0px orange;
         font-size: 10vw;
         text-transform: uppercase;
+        translate: -150% 0;
+        animation: afficher-contenu 0.25s 0s linear forwards;
     }
+
+    &__auteur {
+        translate: -150% 0;
+        animation: afficher-contenu 0.5s 0.1s linear forwards;
+    }
+
+    &__description {
+        translate: -150% 0;
+        animation: afficher-contenu 0.5s 0.2s linear forwards;
+    }
+
 
     &__courriel {
         font-size: 1rem;
         font-weight: bold;
 
+        translate: -150% 0;
+        animation: afficher-contenu 0.5s 0.3s linear forwards;
+
         a {
             text-decoration: none;
             color: black;
-
             &:visited {
                 color: black;
             }
@@ -57,11 +78,17 @@
     &__adresse {
         font-size: 1rem;
         font-weight: bold;
+
+        translate: -150% 0;
+        animation: afficher-contenu 0.5s 0.4s linear forwards;
     }
 
     &__telephone {
         font-size: 1rem;
         font-weight: bold;
+
+        translate: -150% 0;
+        animation: afficher-contenu 0.5s 0.5s linear forwards;
     }
 
     &__inscription {

@@ -7,7 +7,7 @@ $functions_dir = get_template_directory() . '/functions/';
 $function_files = array(
     'customizer.php',
     'options.php',
-    'genere-boutons.php'
+    'generateur.php'
 );
 
 // Boucle pour inclure tous les fichiers

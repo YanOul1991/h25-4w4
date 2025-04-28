@@ -5,7 +5,7 @@
     let activeI = 0;
 
     carouselInputs.forEach((value) => value.addEventListener("click", updateCaroussel));
-    
+
     // for (const input of carouselInputs) {
     //     input.addEventListener("click", updateCaroussel);
     //     console.log(input);

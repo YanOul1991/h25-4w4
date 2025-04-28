@@ -5,6 +5,9 @@ $info_adresse = get_theme_mod('infos_adresse', '');
 $info_phone = get_theme_mod('infos_phone', '');
 ?>
 
+<?php 
+genere_vague();
+?>
 <footer>
     <section class="piedpage">
         <div class="piedpage__liens">
