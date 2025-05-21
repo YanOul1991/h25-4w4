@@ -4,12 +4,13 @@
             <section class="singlepost__main">
                 <h1 class="singlepost__main__titre"><?php the_title(); ?></h1>
                 <div class="singlepost__main__image">
+                <h6>Publié par <?php echo get_the_author(); ?></h6>
                     <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('large'); ?>
-                    <?php else : ?>
-                        <?php
+                        <?php else : ?>
+                            <?php
                         $imgRandom = [];
-
+                        
                         for ($i = 0; $i < get_theme_mod("img_rand_count"); $i++) {
                             $url = get_theme_mod("img_rand_$i");
                             if (empty($url)) {
@@ -20,6 +21,7 @@
                         $img = $imgRandom[array_rand($imgRandom)];
                         ?>
                         <img src="<?php echo esc_url($img) ?>" alt="Image générique">
+                        <h6>Publié le <?php echo get_the_date("d-m-Y"); ?></h6>
                     <?php endif; ?>
                 </div>
             </section>
