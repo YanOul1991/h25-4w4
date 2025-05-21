@@ -12,7 +12,15 @@ for (const element of categorie__ul__li) {
 function fetchStuff(event) {
     const categoryId = event.target.getAttribute("data-categoryID");
 
-    const domaine = window.location.href;
+    // const domaine = window.location.href;
+    // const domaine = "/4w4/";
+    const domaine = window.origin + "/4w4/";
+
+
+
+    console.log(domaine);
+    
+    // const domaine = window.location.domain;
 
     const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
 
