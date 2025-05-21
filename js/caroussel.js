@@ -1,6 +1,7 @@
 (function () {
     let carouselInputs = document.querySelectorAll(".hero__radio__input");
     let carouselImages = document.querySelectorAll(".hero__caroussel");
+    let contenuCarouselle = document.querySelector(".hero__contenu");
 
     let activeI = 0;
 
@@ -17,6 +18,10 @@
     function updateCaroussel(event) {
         clearInterval(interval);
         console.log();
+
+        // contenuCarouselle.classList.remove("display");
+        contenuCarouselle.classList.add("hide");
+        setTimeout(AnimContent, 250);
         
         activeI = new Number(event.target.getAttribute("data-id_radio"));
         
@@ -35,10 +40,19 @@
 
         carouselInputs[activeI].checked = true;
 
+        contenuCarouselle.classList.add("hide");
+        setTimeout(AnimContent, 250);
+
         for (let i = 0; i < carouselImages.length; i++) {
             carouselImages[i].classList.remove("displayed");
         }
 
         carouselImages[activeI].classList.add("displayed");
+    }
+
+    function AnimContent() {
+        console.log("Adding display class");
+        // contenuCarouselle.classList.add("display");
+        contenuCarouselle.classList.remove("hide");
     }
 })()

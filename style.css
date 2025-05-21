@@ -492,31 +492,22 @@ header {
   font-size: clamp(1rem, 3vw, 1.6rem);
   font-weight: 900;
 }
-@keyframes afficher-contenu {
-  to {
-    translate: 0 0;
-  }
-}
 .hero__titre {
   text-shadow: 3px 3px 0px orange;
   font-size: 10vw;
   text-transform: uppercase;
-  translate: -150% 0;
-  animation: afficher-contenu 0.25s 0s linear forwards;
+  translate: -150%;
 }
 .hero__auteur {
   translate: -150% 0;
-  animation: afficher-contenu 0.5s 0.1s linear forwards;
 }
 .hero__description {
   translate: -150% 0;
-  animation: afficher-contenu 0.5s 0.2s linear forwards;
 }
 .hero__courriel {
   font-size: 1rem;
   font-weight: bold;
-  translate: -150% 0;
-  animation: afficher-contenu 0.5s 0.3s linear forwards;
+  translate: -150%;
 }
 .hero__courriel a {
   text-decoration: none;
@@ -528,14 +519,64 @@ header {
 .hero__adresse {
   font-size: 1rem;
   font-weight: bold;
-  translate: -150% 0;
-  animation: afficher-contenu 0.5s 0.4s linear forwards;
+  translate: -150%;
 }
 .hero__telephone {
   font-size: 1rem;
   font-weight: bold;
-  translate: -150% 0;
-  animation: afficher-contenu 0.5s 0.5s linear forwards;
+  translate: -150%;
+}
+@keyframes afficher-contenu {
+  from {
+    translate: -500% 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes cacher-contenu {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -500% 0;
+  }
+}
+.hero__contenu > .hero__titre {
+  animation: afficher-contenu 1s 0s linear forwards;
+}
+.hero__contenu.hide > .hero__titre {
+  animation: cacher-contenu 1s 0s linear forwards;
+}
+.hero__contenu > .hero__auteur {
+  animation: afficher-contenu 1s 0.1s linear forwards;
+}
+.hero__contenu.hide > .hero__auteur {
+  animation: cacher-contenu 1s 0.1s linear forwards;
+}
+.hero__contenu > .hero__description {
+  animation: afficher-contenu 1s 0.2s linear forwards;
+}
+.hero__contenu.hide > .hero__description {
+  animation: cacher-contenu 1s 0.2s linear forwards;
+}
+.hero__contenu > .hero__courriel {
+  animation: afficher-contenu 1s 0.3s linear forwards;
+}
+.hero__contenu.hide > .hero__courriel {
+  animation: cacher-contenu 1s 0.3s linear forwards;
+}
+.hero__contenu > .hero__adresse {
+  animation: afficher-contenu 1s 0.4s linear forwards;
+}
+.hero__contenu.hide > .hero__adresse {
+  animation: cacher-contenu 1s 0.4s linear forwards;
+}
+.hero__contenu > .hero__telephone {
+  animation: afficher-contenu 1s 0.5s linear forwards;
+}
+.hero__contenu.hide > .hero__telephone {
+  animation: cacher-contenu 1s 0.5s linear forwards;
 }
 .hero__inscription {
   background-color: rgba(255, 255, 255, 0.35);

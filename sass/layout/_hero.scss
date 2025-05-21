@@ -6,7 +6,7 @@
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    
+
     &__caroussel {
         position: absolute;
         left: 0;
@@ -19,7 +19,7 @@
         z-index: -1;
     }
 
-    &__contenu{
+    &__contenu {
         background-size: cover;
         /* Display */
         display: flex;
@@ -28,75 +28,139 @@
         align-items: flex-start;
         gap: 40px 0;
 
-        p{
+        p {
             font-size: clamp(1rem, 3vw, 1.6rem);
             font-weight: 900;
         }
     }
     
-    @keyframes afficher-contenu {
-        to {
-            translate: 0 0;
-        }
-    }
-
+    
     &__titre {
         text-shadow: 3px 3px 0px orange;
         font-size: 10vw;
         text-transform: uppercase;
-        translate: -150% 0;
-        animation: afficher-contenu 0.25s 0s linear forwards;
+        translate: -150%;
     }
-
     &__auteur {
         translate: -150% 0;
-        animation: afficher-contenu 0.5s 0.1s linear forwards;
     }
-
     &__description {
         translate: -150% 0;
-        animation: afficher-contenu 0.5s 0.2s linear forwards;
     }
-
-
     &__courriel {
         font-size: 1rem;
         font-weight: bold;
-
-        translate: -150% 0;
-        animation: afficher-contenu 0.5s 0.3s linear forwards;
-
+        translate: -150%;
         a {
             text-decoration: none;
             color: black;
+
             &:visited {
                 color: black;
             }
         }
     }
-
     &__adresse {
         font-size: 1rem;
         font-weight: bold;
-
-        translate: -150% 0;
-        animation: afficher-contenu 0.5s 0.4s linear forwards;
+        translate: -150%;
     }
-
     &__telephone {
         font-size: 1rem;
         font-weight: bold;
-
-        translate: -150% 0;
-        animation: afficher-contenu 0.5s 0.5s linear forwards;
+        translate: -150%;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////// ANIMATIONS ELEMENTS SECTION HERO
+    /// 
+    /// 
+    /// KEYFRAMES
+    /// 
+    @keyframes afficher-contenu {
+        from {
+            translate: -500% 0
+        }
+
+        to {
+            translate: 0 0;
+        }
+    }
+
+    @keyframes cacher-contenu {
+        from {
+            translate: 0 0;
+        }
+
+        to {
+            translate: -500% 0;
+        }
+    }
+
+
+    // titre
+    &__contenu/* .display */>&__titre {
+        animation: afficher-contenu 1s 0s linear forwards;
+    }
+
+    &__contenu.hide>&__titre {
+        animation: cacher-contenu 1s 0s linear forwards;
+    }
+
+    // auteur
+    &__contenu/* .display */>&__auteur {
+        animation: afficher-contenu 1s 0.1s linear forwards;
+    }
+
+    &__contenu.hide>&__auteur {
+        animation: cacher-contenu 1s 0.1s linear forwards;
+    }
+
+    // description
+    &__contenu/* .display */>&__description {
+        animation: afficher-contenu 1s 0.2s linear forwards;
+    }
+
+    &__contenu.hide>&__description {
+        animation: cacher-contenu 1s 0.2s linear forwards;
+    }
+
+    // courriel
+    &__contenu/* .display */>&__courriel {
+        animation: afficher-contenu 1s 0.3s linear forwards;
+    }
+
+    &__contenu.hide>&__courriel {
+        animation: cacher-contenu 1s 0.3s linear forwards;
+    }
+
+    // adresse
+    &__contenu/* .display */>&__adresse {
+        animation: afficher-contenu 1s 0.4s linear forwards;
+    }
+
+    &__contenu.hide>&__adresse {
+        animation: cacher-contenu 1s 0.4s linear forwards;
+    }
+
+    // telephone
+    &__contenu/* .display */>&__telephone {
+        animation: afficher-contenu 1s 0.5s linear forwards;
+    }
+
+    &__contenu.hide>&__telephone {
+        animation: cacher-contenu 1s 0.5s linear forwards;
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////
 
     &__inscription {
         background-color: rgba(255, 255, 255, 0.35);
         width: fit-content;
         padding: 0.75rem 1rem;
         border-radius: 5px;
-        
+
         a {
             color: black;
             font-size: 1rem;
