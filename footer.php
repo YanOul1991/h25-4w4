@@ -9,7 +9,7 @@ $info_phone = get_theme_mod('infos_phone', '');
 genere_vague();
 ?>
 <footer>
-    <section class="piedpage">
+    <section class="piedpage" style="background-image: url(<?php echo get_theme_mod('footer_img', '') ?>); background-size: cover;">
         <div class="piedpage__liens">
             <?php wp_nav_menu(array(
                 'menu' => 'liens',

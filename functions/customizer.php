@@ -53,6 +53,22 @@ function theme_tp_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    /* ============================== SECTION FOOTER ============================== */
+    $wp_customize->add_section('footer', array(
+        'title' => __('Footer', 'theme_tp'),
+        'priority' => 30,
+    ));
+    ########################################## IMAGE BACKGROUND 
+    // Ajout donnee
+    $wp_customize->add_setting('footer_img', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    // Controle donnee
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_img', array(
+        'label' => __('Image background', 'theme_tp'),
+        'section' => 'footer',
+    )));
 
 
     /* ============================== SECTION HERO ============================== */
@@ -213,6 +229,51 @@ function theme_tp_customize_register($wp_customize)
         'label' => __('Couleur icone sociaux', 'theme_tp'),
         'section' => 'notfound',
     )));
+
+    /* ================ ICONES LIENS SOCIAUX ================ */
+    $wp_customize->add_section('icons', array(
+        'title'    => __('Icones sociaux', 'theme_tp'),
+        'priority' => 30,
+    ));
+
+    ###################### CONTROLE DU NOMBRE D'IMAGES
+    $wp_customize->add_setting('icons_count', array(
+        'default'   => 1,
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('icons_count', array(
+        'label'   => __("Nombre d'icones", 'theme_tp'),
+        'section' => 'icons',
+        'type'    => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 10,
+            'step' => 1,
+        ),
+    ));
+
+    $nbIcons = get_theme_mod("icons_count");
+    for ($i = 0; $i < $nbIcons; $i++) {
+        $wp_customize->add_setting('icon_svg_url_'.$i, array(
+            'default' => __('SVG ICONE LIEN'),
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
+        $wp_customize->add_control('icon_svg_url_'.$i, array(
+            'label' => __('Lien SVG | Lien redir', 'theme_tp'),
+            'section' => 'icons',
+            'type' => 'text',
+        ));
+
+        $wp_customize->add_setting('icon_url_'.$i, array(
+            'default' => __('SVG REDIR LIEN'),
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
+        $wp_customize->add_control('icon_url_'.$i, array(
+            'label' => __('', 'theme_tp'),
+            'section' => 'icons',
+            'type' => 'text',
+        ));
+    }
 }
 
 add_action('customize_register', 'theme_tp_customize_register');
