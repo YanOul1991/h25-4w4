@@ -11,7 +11,7 @@ get_header();
         <?php genere_vague("#6cefa0") ?>
         <section class="pays__main" style="display: flex; flex-flow: row wrap;">
             <?php genererListePays(array("France", "États-Unis", "Canada", "Argentine", "Chili", "Belgique", "Maroc", "Mexique", "Japon", "Italie", "Islande", "Chine", "Grèce", "Suisse")) ?>
-            <div class="destination__titre"></div>
+            <div class="pays__main__titre"></div>
             <div class="pays__liste"></div>
         </section>
     </div>
