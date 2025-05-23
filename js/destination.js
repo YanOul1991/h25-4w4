@@ -14,7 +14,7 @@ for (const element of categorie__ul__li) {
 for (const element of paysListe) {
     element.addEventListener("click", fetchStuff);
 }
-// console.log(document.querySelector("base").getAttribute("href"));
+console.log(document.querySelector("base").getAttribute("href"));
 
 fetchStuff();
 
@@ -40,10 +40,9 @@ function fetchStuff(event) {
     // const domaine = window.location.href;
     // const domaine = "/4w4/";
     const domaine = window.origin + "/4w4/";
-
     // const domaine = window.location.domain;
 
-    const apiUrl = `${domaine}wp-json/wp/v2/posts?${targetSearchType}=${targetQuery}`;
+    const apiUrl = `${document.querySelector("base").getAttribute("href")}/wp-json/wp/v2/posts?${targetSearchType}=${targetQuery}`;
 
     fetch(apiUrl)
         .then(response => response.json())
