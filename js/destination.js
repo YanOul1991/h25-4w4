@@ -1,50 +1,74 @@
-
 const categorie__ul__li = document.querySelectorAll(".categorie__ul__li");
-
 const categoryTitre = document.querySelector(".destination__titre");
+const paysListe = document.querySelectorAll(".pays__main .categorie__ul__li");
+const paysListeParent = document.querySelector(".pays__main .pays__liste");
 
-categoryTitre.innerHTML = "";
+console.log(paysListeParent);
+
+if (categoryTitre != null) {
+    categoryTitre.innerHTML = "";
+}
 
 for (const element of categorie__ul__li) {
     element.addEventListener("click", fetchStuff)
 }
 
+for (const element of paysListe) {
+    element.addEventListener("click", fetchStuff);
+}
+
 function fetchStuff(event) {
-    const categoryId = event.target.getAttribute("data-categoryID");
+    const targetQuery = event.target.getAttribute("data-query");
+    const targetSearchType = event.target.getAttribute("data-search-method");
+    console.log(event.target);
 
     // const domaine = window.location.href;
     // const domaine = "/4w4/";
     const domaine = window.origin + "/4w4/";
 
-    console.log(domaine);
-    
     // const domaine = window.location.domain;
 
-    const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+    const apiUrl = `${domaine}wp-json/wp/v2/posts?${targetSearchType}=${targetQuery}`;
 
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            categoryTitre.innerHTML = `Articles de la section ${(event.target.innerHTML).toLowerCase()}`
+            if (targetSearchType == "categories") {
+                categoryTitre.innerHTML = `Articles de la section ${(event.target.innerHTML).toLowerCase()}`
+                const destinationList = document.querySelector('.destination__list');
+                destinationList.innerHTML = "";
+                data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add("destination__item");
+                    articleElement.innerHTML = `
+                        <h3 class="destination__item__titre">${article.title.rendered}</h3>
+                        ${article.excerpt.rendered}
+                        <a href="${article.link}">Lire plus</a>
+                    `;
+                    destinationList.appendChild(articleElement);
 
-            const destinationList = document.querySelector('.destination__list');
+                    articleElement.addEventListener("click", () => {
+                        articleElement.classList.toggle("displayed");
+                    })
+                });
+            }
+            else if (targetSearchType == "search") {
+                paysListeParent.innerHTML = '';
+                data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add("destination__item");
+                    articleElement.innerHTML = `
+                        <h3 class="destination__item__titre">${article.title.rendered}</h3>
+                        ${article.excerpt.rendered}
+                        <a href="${article.link}">Lire plus</a>
+                    `;
+                    articleElement.addEventListener("click", () => {
+                        articleElement.classList.toggle("displayed");
+                    })
 
-            destinationList.innerHTML = "";
-
-            data.forEach(article => {
-                const articleElement = document.createElement('div');
-                articleElement.classList.add("destination__item");
-                articleElement.innerHTML = `
-                    <h3 class="destination__item__titre">${article.title.rendered}</h3>
-                    ${article.excerpt.rendered}
-                    <a href="${article.link}">Lire plus</a>
-                `;
-                destinationList.appendChild(articleElement);
-
-                articleElement.addEventListener("click", () => {
-                    articleElement.classList.toggle("displayed");
-                })
-            });
+                    paysListeParent.appendChild(articleElement);
+                });
+            }
         })
         .catch(error => console.error('Erreur lors de la récupération des articles:', error));
 }

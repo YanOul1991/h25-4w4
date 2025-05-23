@@ -24,7 +24,7 @@ function categories_liste($parent_slug)
             echo '<ul class="categorie__ul">';
             foreach ($sous_categories as $categorie) {
                 // Afficher le nom de chaque sous-catégorie
-                echo '<li data-categoryID="' . esc_html($categorie->term_id) . '" class="categorie__ul__li">' . esc_html($categorie->name) . '</li>';
+                echo '<li data-search-method="categories" data-query="' . esc_html($categorie->term_id) . '" class="categorie__ul__li">' . esc_html($categorie->name) . '</li>';
             }
             echo '</ul>';
         } else {
@@ -37,7 +37,7 @@ function categories_liste($parent_slug)
 
 function genererListePays($listePays)
 { ?>
-    <ul class="destination__liste">
+    <ul class="destination__liste" style="display: flex; flex-flow:row wrap; gap: 20px;">
         <?php for ($i = 0; $i < count($listePays); $i++) : ?>
             <li class="categorie__ul__li" data-search-method="search" data-query="<?php echo strtolower($listePays[$i]) ?>"><?php echo $listePays[$i] ?></li>
         <?php endfor; ?>
