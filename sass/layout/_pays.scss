@@ -1,0 +1,27 @@
+.pays {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+
+    >p {
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }
+
+    &__main {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 50px;
+
+        &__titre {
+            font-size: 2.5rem;
+            font-weight: bolder;
+        }
+    }
+
+    &__liste {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 25px;
+    }
+}
