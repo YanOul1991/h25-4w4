@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mondo voyages</title>
-    <base href="<?php home_url()?>">
+    <base href="<?php echo home_url()?>">
     <?php wp_head(); ?>
 </head>
 

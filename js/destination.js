@@ -3,12 +3,6 @@ const categoryTitre = document.querySelector(".destination__titre");
 const paysListe = document.querySelectorAll(".pays__main .categorie__ul__li");
 const paysListeParent = document.querySelector(".pays__main .pays__liste");
 
-console.log(paysListeParent);
-
-if (categoryTitre != null) {
-    categoryTitre.innerHTML = "";
-}
-
 for (const element of categorie__ul__li) {
     element.addEventListener("click", fetchStuff)
 }
@@ -16,6 +10,9 @@ for (const element of categorie__ul__li) {
 for (const element of paysListe) {
     element.addEventListener("click", fetchStuff);
 }
+
+console.log(document.querySelector("base").getAttribute("href"));
+
 
 function fetchStuff(event) {
     const targetQuery = event.target.getAttribute("data-query");
@@ -54,6 +51,7 @@ function fetchStuff(event) {
             }
             else if (targetSearchType == "search") {
                 paysListeParent.innerHTML = '';
+                document.querySelector(".pays__main__titre").innerHTML = `Liste des destinations pour : ${event.target.innerHTML}`;
                 data.forEach(article => {
                     const articleElement = document.createElement('div');
                     articleElement.classList.add("destination__item");
