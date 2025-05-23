@@ -16,8 +16,6 @@ function fetchStuff(event) {
     // const domaine = "/4w4/";
     const domaine = window.origin + "/4w4/";
 
-
-
     console.log(domaine);
     
     // const domaine = window.location.domain;
